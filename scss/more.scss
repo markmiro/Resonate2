@@ -16,34 +16,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    // font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    // border-bottom: 0.1rem solid $light-gray;
-    color: $main-color;
-}
-
-.button {
-    min-width: 6rem;
-    // background-color: $teal;
-    // &:hover {
-    //     background-color: darken($teal, 5);
-    // }
-    &.red {
-        background-color: $red;
-    }
-    &.blue {
-        background-color: $blue;
-    }
-    &.quiet {
-        background-color: $secondary-color;
-    }
-}
-
-.link {
-    display: inline-block;
-    margin: 1.5rem 1.5rem 0 0;
-    font-weight: 800;
 }
 
 #header {
@@ -74,7 +46,6 @@ h1, h2, h3, h4, h5, h6 {
         li {
             list-style: none;
             a {
-                font-size: 1rem;
                 color: $main-color;
                 display: block;
                 padding: rem-calc(10) 0;
@@ -82,42 +53,13 @@ h1, h2, h3, h4, h5, h6 {
                 border-top: rem-calc(1) solid $light-gray;
                 text-align: right;
                 position: relative;
-                // &:hover {
-                //     color: black;
-                //     padding-right: .75rem;
-                //     // background: red;
-                // }
-                // &:hover:after {
-                //     content: "";
-                //     display: block;
-                //     background: $main-color;
-                //     width: .25rem;
-                //     height: 100%;
-                //     position: absolute;
-                //     right: 0;
-                //     top: 0;
-                // }
-                &:hover {
-                    // color: black;
-                }
-                &:hover:after {
-                    content: "";
-                    display: block;
-                    background: $main-color;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 999px;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    margin-top: -5px;
-                }
             }
         }
     }
 
 
 #hero {
+    display: none;
     // position: absolute;
     width: 100%;
     padding: 9rem 12rem;
@@ -137,12 +79,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-#test {
+#content-container {
     padding-left: 12rem;
     z-index: 1000;    
     position: absolute;
     width: 100%;
-    top: 14rem;
+    // top: 14rem;
 
      .stuff {
         // font-size: 1.3125em;
