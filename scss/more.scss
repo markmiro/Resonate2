@@ -8,14 +8,21 @@ $teal: #099;
 $blue: hsl(210deg, 58%, 47%);
 $red: hsl(4deg, 60%, 56%);
 
-$content-width: rem-calc(650);
+$content-width: 550px;
 
 
+.grid-row-test {
+    @include grid-row();
+    .section {
+        @include grid-column(6);
+    }
+}
 
 body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
 }
 
 #header {

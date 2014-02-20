@@ -16,7 +16,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-$base-font-size: 100%;
+$base-font-size: 110%;
 
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 200%;
@@ -36,9 +36,9 @@ $base-font-size: 100%;
 
 // We use these to control various global styles
 $body-bg: #fff;
-$body-font-color: #555;
-$body-font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
+$body-font-color: #333;
+$body-font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-weight: normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
