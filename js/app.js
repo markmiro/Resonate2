@@ -1,4 +1,4 @@
 $(function () {
-    $('#header').html(HAML["header"]);
+    // $('#header').html(HAML["header"]);
     $('#content').html(HAML["index"]);
 });

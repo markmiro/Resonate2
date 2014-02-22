@@ -1,0 +1,47 @@
+// The core consists of six components:
+// 1. Reset
+// Standard Normalize.css reset.
+
+// 2. Settings
+// @font-face and global variables.
+
+// 3. Helpers
+// Extends, functions, mixins, keyframe animations.
+
+// 4. Base
+// Base-level tags.
+
+// 5. Content
+// Base-level typography (colors, fonts).
+
+// 6. Layout
+// Base-level layout (margin, padding, sizing).
+
+
+
+
+$black: #000;
+$main-color: #555;
+$secondary-color: #888;
+$light-gray: #bbb;
+$off-white: #eee;
+$teal: #099;
+
+$blue: hsl(210deg, 58%, 47%);
+$red: hsl(4deg, 60%, 56%);
+
+$content-width: 550px;
+
+
+// ------
+
+
+body {
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+h1, h2 {
+    // font-weight: 900;
+}
