@@ -107,13 +107,13 @@ module.exports = function(grunt) {
         }
       },
 
-      haml: {
-        files: 'haml/**/*.haml',
-        tasks: ['haml'],
-        options: {
-          livereload: true
-        }
-      },
+      // haml: {
+      //   files: 'haml/**/*.haml',
+      //   tasks: ['haml'],
+      //   options: {
+      //     livereload: true
+      //   }
+      // },
 
       jade: {
         files: 'jade/**/*.jade',
