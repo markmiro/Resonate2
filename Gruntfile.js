@@ -119,7 +119,7 @@ module.exports = function(grunt) {
         files: 'jade/**/*.jade',
         tasks: ['jade'],
         options: {
-          livereload: true
+          // livereload: true
         }
       },
 
@@ -147,6 +147,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
   // grunt.loadNpmTasks('grunt-ruby-haml');
 
-  grunt.registerTask('build', ['sass', 'jade', 'concat']);
+  grunt.registerTask('build', ['sass', 'jade:dev', 'concat']);
   grunt.registerTask('default', ['build','watch']);
 }
