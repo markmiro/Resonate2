@@ -1,4 +1,5 @@
 $(function () {
     // $('#header').html(HAML["header"]);
-    $('#content').html(HAML["index"]);
+    $('#content').html(JST["jade/index"]);
+    // $('#content').html("Hello!");
 });

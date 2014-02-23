@@ -40,6 +40,31 @@ module.exports = function(grunt) {
       }
     },
 
+    jade: {
+      dev: {
+        options: {
+          data: {
+            debug: true
+          },
+          client: true,
+          pretty: true
+        },
+        files: {
+          'templates.js': ['jade/**/*.jade']
+        }
+      },
+      release: {
+        options: {
+          data: {
+            debug: false
+          }
+        },
+        files: {
+          "release.html": "test.jade"
+        }
+      }
+    },
+
     uglify: {
       options: {
         mangle: true,
@@ -90,6 +115,14 @@ module.exports = function(grunt) {
         }
       },
 
+      jade: {
+        files: 'jade/**/*.jade',
+        tasks: ['jade'],
+        options: {
+          livereload: true
+        }
+      },
+
       concat: {
         files: 
           ['js/**/*.js', 'templates.js'],
@@ -111,8 +144,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-haml');
+  grunt.loadNpmTasks('grunt-contrib-jade');
   // grunt.loadNpmTasks('grunt-ruby-haml');
 
-  grunt.registerTask('build', ['sass', 'haml', 'concat']);
+  grunt.registerTask('build', ['sass', 'jade', 'concat']);
   grunt.registerTask('default', ['build','watch']);
 }
