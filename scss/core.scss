@@ -41,6 +41,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
+    small {
+        display: block;
+        line-height: 1.25;
+    }
 }
 h1, h2 {
     // font-weight: 900;

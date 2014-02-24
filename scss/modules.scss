@@ -9,6 +9,12 @@
 // Navigation
 // Re-appearing chunks of content, like a user info card or sidebar
 
+.centered-block {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-width;
+}
 
 .dropshadow-example {
     font-weight: 400;
@@ -25,5 +31,42 @@
         // @include grid-column(6);
         @extend .medium-6;
         @extend .columns;
+    }
+}
+
+.iphone-5-vertical {
+    $width: 758px;
+    $height: 1605px;
+    $top: 234px;
+    $left: 62px;
+    // $width: 1018px;
+    // $height: 1766px;
+    background-image: url(../img/iphone-5-black-vertical.png);
+    // background-color: red;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // background-width: $height/2;
+    width: $width / 2;
+    height: $height / 2;
+    display: block;
+    position: relative;
+
+    img {
+        top: $top/2;
+        left: $left/2;
+        display: block;
+        position: absolute;
+    }
+}
+
+.project {
+    @extend .centered-block;
+    margin-bottom: 200px;
+
+    .logo {
+        // background: $secondary-color;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
     }
 }
