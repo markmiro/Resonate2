@@ -35,10 +35,12 @@
 }
 
 .iphone-5-vertical {
-    $width: 758px;
-    $height: 1605px;
-    $top: 234px;
-    $left: 62px;
+    $scale: 0.8;
+    $width: 758px * $scale;
+    $height: 1605px * $scale;
+    $top: 234px * $scale;
+    $left: 62px * $scale;
+    $screen-width: 640px * $scale;
     // $width: 1018px;
     // $height: 1766px;
     background-image: url(../img/iphone-5-black-vertical.png);
@@ -46,14 +48,45 @@
     background-repeat: no-repeat;
     background-size: 100%;
     // background-width: $height/2;
-    width: $width / 2;
-    height: $height / 2;
+    width: $width/2;
+    height: $height/2;
     display: block;
     position: relative;
 
     img {
         top: $top/2;
         left: $left/2;
+        width: $screen-width/2;
+        // height: 640px;
+        display: block;
+        position: absolute;
+    }
+}
+
+.ipad-horizontal {
+    $scale: 0.6;
+    $width: 2503px * $scale;
+    $height: 1766px * $scale;
+    $top: 115px * $scale;
+    $left: 227px * $scale;
+    $screen-width: 2048px * $scale;
+    // $width: 1018px;
+    // $height: 1766px;
+    background-image: url(../img/ipad-black-horizontal.png);
+    // background-color: red;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // background-width: $height/2;
+    width: $width/2;
+    height: $height/2;
+    display: block;
+    position: relative;
+
+    img {
+        top: $top/2;
+        left: $left/2;
+        width: $screen-width/2;
+        // height: 640px;
         display: block;
         position: absolute;
     }
