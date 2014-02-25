@@ -185,22 +185,46 @@
     border-top: 1rem solid $off-white;
     margin-top: 8rem;
 
-    & > .description, & > h1 {
-        @include grid-row();
-        padding: 1rem;
+    & > h1 {
+        // text-align: center;
+        font-size: 100%;
+        letter-spacing: -0.06rem;
+        small {
+            color: $main-color;
+            max-width: 700px;
+            font-size: 3rem;
+            font-weight: 900;
+            font-style: italic;
+            // text-align: center;
+        }
+    }
+
+    @media #{$small-only} {
+        & > .description, & > h1 {
+            @include grid-row();
+            padding: 1rem;
+        }
+    }
+
+    @media #{$medium-up} {
+        & > .description, & > h1 {
+            margin: 4rem 4rem;
+        }
     }
 
     .logo {
-        // background: $secondary-color;
-        width: 50px;
-        height: 50px;
-        margin-right: 20px;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
     }
 
     .product-shot {
         @include grid-row();
         padding: 1rem 0;
-        border-top: 1px solid $light-gray;
+        @media #{$medium-up} {
+            padding: 2rem 3rem;
+        }
+        border-top: 1px solid $off-white;
         .iphone-5-vertical {
             // @extend .medium-6;
             // @extend .columns;
@@ -209,6 +233,11 @@
             @extend .medium-6;
             @extend .columns;
             max-width: $content-width;
+        }
+        @media #{$medium-up} {
+            .description {
+                margin-top: 85px;
+            }
         }
         @media #{$small-only} {
             // &:nth-child(odd) {

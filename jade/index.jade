@@ -12,9 +12,8 @@ mixin vertical-iphone(screenshot)
         img(src='img/'+screenshot)
 
 mixin horizontal-ipad(screenshot)
-  .medium-6.columns
-    .ipad-horizontal
-      img(src='img/'+screenshot)
+  .ipad-horizontal
+    img(src='img/'+screenshot)
 
 mixin project-logo(logo)
   img.logo(src='img/'+logo)
@@ -51,6 +50,7 @@ mixin project-logo(logo)
     +product-shot()
       +vertical-iphone('teal-phonegap.png')
       .description
+        h3 State-of-the-art
         p.
           This app showcases the state-of-the-art when it comes to using web technologies to build a mobile app. At the time of building it, there were very few robust, and fast tools to build upon. The screen tansitions and all the UI was coded from scratch.
         p.
@@ -58,12 +58,12 @@ mixin project-logo(logo)
         p.
           Making iPhone apps with HTML5, CSS, and Javascript is several times more difficult than making the same app just for a desktop browser.
     +product-shot()
-      +vertical-iphone('teal-phonegap1.gif')
       .description
         p.
           The idea behind the app is to create a voice booking exper
         p.
           Getting the scrolling to work like native scrolling on both iOS and Android is almost impossible with Phonegap.
+      +vertical-iphone('teal-phonegap1.gif')
     +product-shot()
       +vertical-iphone('teal-phonegap3.gif')
     +product-shot()
@@ -75,7 +75,7 @@ mixin project-logo(logo)
     h1
       +project-logo('preamble-logo.png')
       | Preamble
-      small What if Resumes were invented in the internet era?
+      small What if resumés were invented in the internet era?
     .description
       p.
         The main was to build a slide deck that acts as a clutter-free resume for mobile
@@ -89,11 +89,15 @@ mixin project-logo(logo)
     +product-shot()
       +vertical-iphone('preamble1.gif')
       .description
+        h3 Wizzywig on mobile?
+          small Yes, and lets make the whole app in a single hackathon
         p.
           I decided on using a wizzywig UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
     +product-shot()
       +vertical-iphone('preamble2.gif')
       .description
+        h3 Your head loves bullets
+          small ...not those kind, the other kind
         p.
           Since most resumes are essentially bullet points, this makes for a simple, flexible system to allow anyone to express themselves professionally. Users can also add and remove slides.
 
@@ -101,11 +105,13 @@ mixin project-logo(logo)
     +product-shot()
       +vertical-iphone('preamble5.gif')
       .description
+        h3 Who needs arrow buttons?
         p.
           Users can navigate between the slides by swiping their finger from right to left on the screen.
     +product-shot()
       +vertical-iphone('preamble4.gif')
       .description
+        h3 One-click instant preview
         p.
           Once you press the "Done" button you can see how everyone else on the internet will see your resume deck. The only difference is that they won't see an edit button.
         p. The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
