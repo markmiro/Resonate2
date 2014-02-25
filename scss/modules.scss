@@ -34,72 +34,196 @@
     }
 }
 
-.iphone-5-vertical {
-    $scale: 0.8;
-    $width: 758px * $scale;
-    $height: 1605px * $scale;
-    $top: 234px * $scale;
-    $left: 62px * $scale;
-    $screen-width: 640px * $scale;
-    // $width: 1018px;
-    // $height: 1766px;
-    background-image: url(../img/iphone-5-black-vertical.png);
-    // background-color: red;
+.device {
     background-repeat: no-repeat;
     background-size: 100%;
     // background-width: $height/2;
-    width: $width/2;
-    height: $height/2;
-    display: block;
+    display: inline-block;
     position: relative;
+}
 
-    img {
-        top: $top/2;
-        left: $left/2;
-        width: $screen-width/2;
-        // height: 640px;
-        display: block;
-        position: absolute;
+.iphone-5-vertical {
+    @extend .device;
+    
+    @media #{$small-only} {
+        $size: 20px;
+        $vertical-bezel-size: 40px;
+
+        border: 8px solid $off-white;
+        border-top-width: $vertical-bezel-size;
+        border-bottom-width: $vertical-bezel-size;
+        border-radius: 12px;
+        z-index: 100;
+
+        &:before {
+            $width: 40px;
+            z-index: 200;
+            content: "";
+            display: block;
+            position: absolute;
+            width: $width;
+            height: 6px;
+            margin-left: -$width/2;
+            top: -22px;
+            left: 50%;
+            border-radius: 999px;
+            border: 1px solid $light-gray;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: $size;
+            height: $size;
+            margin-left: -$size/2;
+            bottom: -10px - $size;
+            left: 50%;
+            border-radius: 999px;
+            border: 1px solid $light-gray;
+        }
+        img {
+            position: relative;
+            width: 200px;
+            outline: 1px solid $main-color;
+        }
+    }
+    @media #{$medium-up} {
+        $scale: 0.8;
+        $width: 758px * $scale;
+        $height: 1605px * $scale;
+        $top: 234px * $scale;
+        $left: 62px * $scale;
+        $screen-width: 640px * $scale;
+        background-image: url(../img/iphone-5-black-vertical.png);
+        width: $width/2;
+        height: $height/2;
+        img {
+            width: $screen-width/2;
+            top: $top/2;
+            left: $left/2;
+            display: block;
+            position: absolute;
+        }
     }
 }
 
 .ipad-horizontal {
-    $scale: 0.6;
-    $width: 2503px * $scale;
-    $height: 1766px * $scale;
-    $top: 115px * $scale;
-    $left: 227px * $scale;
-    $screen-width: 2048px * $scale;
-    // $width: 1018px;
-    // $height: 1766px;
-    background-image: url(../img/ipad-black-horizontal.png);
-    // background-color: red;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    // background-width: $height/2;
-    width: $width/2;
-    height: $height/2;
-    display: block;
-    position: relative;
+    @extend .device;
 
-    img {
-        top: $top/2;
-        left: $left/2;
-        width: $screen-width/2;
-        // height: 640px;
-        display: block;
-        position: absolute;
+    @media #{$small-only} {
+        $size: 10px;
+        $vertical-bezel-size: 24px;
+
+        border: 14px solid $off-white;
+        border-left-width: $vertical-bezel-size;
+        border-right-width: $vertical-bezel-size;
+        border-radius: 8px;
+        z-index: 100;
+
+        &:before {
+            $width: 5px;
+            z-index: 200;
+            content: "";
+            display: block;
+            position: absolute;
+            width: $width;
+            height: $width;
+            margin-top: -$width/2;
+            left: -14px;
+            top: 50%;
+            border-radius: 999px;
+            border: 1px solid $secondary-color;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: $size;
+            height: $size;
+            margin-top: -$size/2;
+            right: -7px - $size;
+            top: 50%;
+            border-radius: 999px;
+            border: 1px solid $secondary-color;
+        }
+        img {
+            position: relative;
+            width: 300px;
+            outline: 1px solid $main-color;
+        }
+    }
+
+    @media #{$medium-up} {
+        $scale: 0.6;
+        $width: 2503px * $scale;
+        $height: 1766px * $scale;
+        $top: 115px * $scale;
+        $left: 227px * $scale;
+        $screen-width: 2048px * $scale;
+        background-image: url(../img/ipad-black-horizontal.png);
+        width: $width/2;
+        height: $height/2;
+
+        img {
+            top: $top/2;
+            left: $left/2;
+            width: $screen-width/2;
+            // height: 640px;
+            display: block;
+            position: absolute;
+        }
     }
 }
 
 .project {
-    @extend .centered-block;
-    margin-bottom: 200px;
+    @include grid-row();
+    // @extend .centered-block;
+    // @extend .row;
+    // max-width: 800px;
+    border-top: 1rem solid $off-white;
+    margin-top: 8rem;
+
+    & > .description, & > h1 {
+        @include grid-row();
+        padding: 1rem;
+    }
 
     .logo {
         // background: $secondary-color;
         width: 50px;
         height: 50px;
         margin-right: 20px;
+    }
+
+    .product-shot {
+        @include grid-row();
+        padding: 1rem 0;
+        border-top: 1px solid $light-gray;
+        .iphone-5-vertical {
+            // @extend .medium-6;
+            // @extend .columns;
+        }
+        .description {
+            @extend .medium-6;
+            @extend .columns;
+            max-width: $content-width;
+        }
+        @media #{$small-only} {
+            // &:nth-child(odd) {
+            //     background: $off-white;
+            // }
+            img {
+
+            }
+            .description {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .product-shot p {
+        // float: left;
     }
 }

@@ -1,93 +1,119 @@
 // #hero 
 // The most advanced Natural Language Understanding API platform. 
+
+mixin product-shot()
+  .product-shot
+      if block
+        block
+
+mixin vertical-iphone(screenshot)
+  .medium-6.columns
+    .iphone-5-vertical
+        img(src='img/'+screenshot)
+
+mixin horizontal-ipad(screenshot)
+  .medium-6.columns
+    .ipad-horizontal
+      img(src='img/'+screenshot)
+
+mixin project-logo(logo)
+  img.logo(src='img/'+logo)
+
+
+
 #content-body
 
   h2 Mark Miro
     small#subhead
       | Front-end web and app developer / designer
   hr
+  .hero
+    h1 Are you tired of hiring sheep?
+      small You know, the types that make you feel like you're doing all the work anyways.
+  hr
+  .hero
+    h1 Do you hesitate to show people your website?
+  hr
 
   .project
     h1
-      img.logo(src='img/music-app-logo.png')
+      +project-logo('music-app-logo.png')
       | Rhapsody Voice
       small What if you could play any song by just by saying it's name?
-      .product-shot
-        .ipad-horizontal
-          img(src='img/rhapsody1.gif')
+    +product-shot()
+      +horizontal-ipad('rhapsody1.gif')
 
   .project
     h1
-      img.logo(src='img/teal-logo.png')
+      +project-logo('teal-logo.png')
       | Teal
       small What happens when you push the iOS browser to it's limit?
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/teal-phonegap.png')
-      p.
-        This app showcases the state-of-the-art when it comes to using web technologies to build a mobile app. At the time of building it, there were very few robust, and fast tools to build upon. The screen tansitions and all the UI was coded from scratch.
-      p.
-        In the end, however, making the app appear like a native iPhone app proved to be more trouble than it was worth. In any case, I love showing this off because it shows that I can program right up to the limit of what iOS Safari can handle.
-      p.
-        Making iPhone apps with HTML5, CSS, and Javascript is several times more difficult than making the same app just for a desktop browser.
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/teal-phonegap1.gif')
-      p.
-        The app
-      p.
-        Getting the scrolling to work like native scrolling on both iOS and Android is almost impossible with Phonegap.
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/teal-phonegap3.gif')
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/teal-phonegap4.gif')
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/teal-phonegap5.gif')
+    +product-shot()
+      +vertical-iphone('teal-phonegap.png')
+      .description
+        p.
+          This app showcases the state-of-the-art when it comes to using web technologies to build a mobile app. At the time of building it, there were very few robust, and fast tools to build upon. The screen tansitions and all the UI was coded from scratch.
+        p.
+          In the end, however, making the app appear like a native iPhone app proved to be more trouble than it was worth. In any case, I love showing this off because it shows that I can program right up to the limit of what iOS Safari can handle.
+        p.
+          Making iPhone apps with HTML5, CSS, and Javascript is several times more difficult than making the same app just for a desktop browser.
+    +product-shot()
+      +vertical-iphone('teal-phonegap1.gif')
+      .description
+        p.
+          The idea behind the app is to create a voice booking exper
+        p.
+          Getting the scrolling to work like native scrolling on both iOS and Android is almost impossible with Phonegap.
+    +product-shot()
+      +vertical-iphone('teal-phonegap3.gif')
+    +product-shot()
+      +vertical-iphone('teal-phonegap4.gif')
+    +product-shot()
+      +vertical-iphone('teal-phonegap1.gif')
 
   .project
     h1
-      img.logo(src='img/preamble-logo.png')
+      +project-logo('preamble-logo.png')
       | Preamble
       small What if Resumes were invented in the internet era?
-    p.
-      The main was to build a slide deck that acts as a clutter-free resume for mobile
-    ul
-      li Sean Ho (idea, presenter)
-      li Yaadhav Raaj (backend)
-      li Nicki Winstead (logo)
-      li Juan Juan (ideation, helped with odds and ends)
-      li Me (Javascript development, design)
+    .description
+      p.
+        The main was to build a slide deck that acts as a clutter-free resume for mobile
+      ul
+        li Sean Ho (idea, presenter)
+        li Yaadhav Raaj (backend)
+        li Nicki Winstead (logo)
+        li Juan Juan (ideation, helped with odds and ends)
+        li Me (Javascript development, design)
 
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/preamble1.gif')
-      p.
-        I decided on using a wizzywig UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/preamble2.gif')
-      p.
-        Since most resumes are essentially bullet points, this makes for a simple, flexible system to allow anyone to express themselves professionally. Users can also add and remove slides.
+    +product-shot()
+      +vertical-iphone('preamble1.gif')
+      .description
+        p.
+          I decided on using a wizzywig UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
+    +product-shot()
+      +vertical-iphone('preamble2.gif')
+      .description
+        p.
+          Since most resumes are essentially bullet points, this makes for a simple, flexible system to allow anyone to express themselves professionally. Users can also add and remove slides.
 
-      p. New slides are automatically titled as Skills, Experience, or Education to prevent to give users one less thing to decide.
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/preamble5.gif')
-      p.
-        Users can navigate between the slides by swiping their finger from right to left on the screen.
-    .product-shot
-      .iphone-5-vertical
-        img(src='img/preamble4.gif')
-      p.
-        Once you press the "Done" button you can see how everyone else on the internet will see your resume deck. The only difference is that they won't see an edit button.
-      p. The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
-    // .product-shot
-      img(src='img/preamble4.gif')
+        p. New slides are automatically titled as Skills, Experience, or Education to prevent to give users one less thing to decide.
+    +product-shot()
+      +vertical-iphone('preamble5.gif')
+      .description
+        p.
+          Users can navigate between the slides by swiping their finger from right to left on the screen.
+    +product-shot()
+      +vertical-iphone('preamble4.gif')
+      .description
+        p.
+          Once you press the "Done" button you can see how everyone else on the internet will see your resume deck. The only difference is that they won't see an edit button.
+        p. The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
+    // +vertical-iphone('preamble4.gif')
       p.
         The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
+
+#content-body-text-test
 
   h1 h1. This is a huge header.
   h2 h2. This is a large header.
@@ -190,4 +216,4 @@
     br
     a.button.quiet Submit
 
-include foundation
+//- include foundation
