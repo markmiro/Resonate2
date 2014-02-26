@@ -15,13 +15,16 @@ mixin horizontal-ipad(screenshot)
 mixin project-logo(logo)
   img.logo(src='img/'+logo)
 
-mixin page()
+mixin page(title)
   doctype html
   html(lang='en')
     head
       meta(charset='utf-8')
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
-      title Mark Miro
+      if (title)
+        title= title + ' - Mark Miro'
+      else
+        title Mark Miro
       link(rel='stylesheet', href='build/app.css')
       //if lt IE 9
         script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')

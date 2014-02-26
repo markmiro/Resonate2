@@ -132,7 +132,7 @@ module.exports = function(grunt) {
       // },
 
       jade: {
-        files: 'jade/**/*.jade',
+        files: ['index.jade', 'jade/**/*.jade'],
         tasks: ['jade'],
         options: {
           // livereload: true
