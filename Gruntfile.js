@@ -28,17 +28,17 @@ module.exports = function(grunt) {
     //   }
     // },
 
-    haml: {
-      dev: {
-        files: {
-            'templates.js': ['haml/**/*.haml']
-        },
-        options: {
-          target: 'js',
-          placement: 'global'
-        }
-      }
-    },
+    // haml: {
+    //   dev: {
+    //     files: {
+    //         'templates.js': ['haml/**/*.haml']
+    //     },
+    //     options: {
+    //       target: 'js',
+    //       placement: 'global'
+    //     }
+    //   }
+    // },
 
     jade: {
       dev: {
@@ -50,19 +50,35 @@ module.exports = function(grunt) {
           pretty: true
         },
         files: {
-          'templates.js': ['jade/**/*.jade']
+          'templates.js': ['jade/*.jade']
         }
       },
-      release: {
+      dev2: {
         options: {
           data: {
-            debug: false
-          }
+            debug: true
+          },
+          pretty: true
         },
         files: {
-          "release.html": "test.jade"
+          'index.html': 'index.jade'
         }
-      }
+      },
+      dev3: {
+        options: {
+          data: {
+            debug: true
+          },
+          pretty: true
+        },
+        files: [{
+          expand: true,
+          src: "*.jade",
+          dest: "build/pages/",
+          ext: ".html",
+          cwd: 'jade/pages/'
+        }]
+      },
     },
 
     uglify: {
@@ -143,10 +159,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-haml');
+  // grunt.loadNpmTasks('grunt-haml');
   grunt.loadNpmTasks('grunt-contrib-jade');
   // grunt.loadNpmTasks('grunt-ruby-haml');
 
-  grunt.registerTask('build', ['sass', 'jade:dev', 'concat']);
+  grunt.registerTask('build', ['sass', 'jade:dev', 'jade:dev2', 'jade:dev3', 'concat']);
   grunt.registerTask('default', ['build','watch']);
 }

@@ -16,6 +16,16 @@
     max-width: $content-width;
 }
 
+.hero {
+    @include grid-row();
+    h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        line-height: 1.25;
+        margin: 4rem;
+    }
+}
+
 .dropshadow-example {
     font-weight: 400;
     line-height: 1.2;
