@@ -3,27 +3,40 @@ include _mixins
 #content-body
 
   .hero
-    hr
-    h1 Do you hesitate to show people your website?
-    hr
+    h1.
+      Afraid you won't find that
+      developer who can<br>
+      also design?
 
-  .project
-    h1
-      +project-logo('music-app-logo.png')
-      | Rhapsody Voice
-      small What if you could play any song by just by saying it's name?
-    +product-shot()
-      +horizontal-ipad('rhapsody1.gif')
+    .will-we
+      .get-along
+        h3.
+          I'd love working with you if you...
+        ul
+          li Are building customer-facing products
+          li Love simple, flat design
+          li Need innovative user interfaces
+          li Are a strong proponent of visual consistency
+          li Appreciate clean code
+          li Do user testing / market research before starting work on a solution
+      .not-get-along
+        h3
+          | We're not a match if you...
+        ul
+          li Offer plumbing + poodle day care services and you want a website that encompasses the breadth that your company has to offer
+          li Still believe drop shadows and glossy buttons are cool
+          li Tend to think EVERYTHING IS IMPORTANT
+          li You think feature creep is a good thing
 
   .project
     h1
       +project-logo('teal-logo.png')
-      | Teal
+      | Teal (Built at Ask Ziggy)
       small What happens when you push the iOS browser to it's limit?
     +product-shot()
       +vertical-iphone('teal-phonegap.png')
       .description
-        h3 State-of-the-art
+        h2 State-of-the-art
         p.
           This app showcases the state-of-the-art when it comes to using web technologies to build a mobile app. At the time of building it, there were very few robust, and fast tools to build upon. The screen tansitions and all the UI was coded from scratch.
         p.
@@ -32,22 +45,66 @@ include _mixins
           Making iPhone apps with HTML5, CSS, and Javascript is several times more difficult than making the same app just for a desktop browser.
     +product-shot()
       .description
+        h2 The idea behind...
         p.
-          The idea behind the app is to create a voice booking exper
-        p.
-          Getting the scrolling to work like native scrolling on both iOS and Android is almost impossible with Phonegap.
+          ...the app was to create a hotel booking app that could also be used by voice. The target is busy frequent travellers. Sometimes they might be booking a hotel last minute in their car, and this app is designed to be the solution to that.
       +vertical-iphone('teal-phonegap1.gif')
     +product-shot()
       +vertical-iphone('teal-phonegap3.gif')
+      .description
+        h2 The <span style='font-size: 1.2rem;'>small</span> details
+        p.
+          Page transitions were difficult to pull off, but in the end it's what makes the app feel right.
     +product-shot()
+      .description
+        h2 Gray, white, gray, white...
+        p.
+          A unique motif throughout the design of the app is the alternating white and gray sections. No popular apps at the moment of development used alternating stripes to brand the app.
+        p.
+          The motif can be used for progress bars, or sections or disabled buttons.
       +vertical-iphone('teal-phonegap4.gif')
     +product-shot()
-      +vertical-iphone('teal-phonegap1.gif')
+      +vertical-iphone('teal-phonegap5.gif')
+      .description
+        h2 Avoiding the<br>uncanny valley
+        p.
+          I wanted to avoid the <em>uncanny valley</em> by making interface components that don't look like anything you'd see on iOS or Android. They still behave like native controls, but they just don't look like them.
+        h3 Built with...
+        .row
+          .medium-6.columns(style='padding: 0;')
+            h5 Development
+            ul
+              li PhoneGap
+              li jQuery
+              li Backbone
+              li underscore
+              li Require.js
+              li Ruby
+          .medium-6.columns(style='padding: 0;')
+            h5 Design
+            ul
+              li HTML5, CSS
+              li Sass
+              li HAML
+              li Photoshop
+              li Illustrator
+
+  .project
+    h1
+      +project-logo('music-app-logo.png')
+      | Rhapsody Voice (Built at Ask Ziggy)
+      small What if you could play any song by just by saying it's name?
+    +product-shot()
+      +horizontal-ipad('rhapsody1.gif')
+      .description
+        h2 The concept
+        p.
+          What if you could control your iPhone or iPad music app without taking your eyes off the road? The app could play any popular song requested.
 
   .project
     h1
       +project-logo('preamble-logo.png')
-      | Preamble
+      | Preamble (Built at the Launch Hackathon)
       small What if resumés were invented in the internet era?
     .description
       p.
@@ -62,137 +119,71 @@ include _mixins
     +product-shot()
       +vertical-iphone('preamble1.gif')
       .description
-        h3 Wizzywig on mobile?
+        h2 WYSIWYG on mobile?
           small Yes, and lets make the whole app in a single hackathon
         p.
           I decided on using a wizzywig UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
     +product-shot()
-      +vertical-iphone('preamble2.gif')
       .description
-        h3 Your head loves bullets
-          small ...not those kind, the other kind
+        h2 Bullets are useful. Let's use them everywhere
         p.
           Since most resumes are essentially bullet points, this makes for a simple, flexible system to allow anyone to express themselves professionally. Users can also add and remove slides.
 
         p. New slides are automatically titled as Skills, Experience, or Education to prevent to give users one less thing to decide.
+      +vertical-iphone('preamble2.gif')
     +product-shot()
       +vertical-iphone('preamble5.gif')
       .description
-        h3 Who needs arrow buttons?
+        h2 Who needs arrow buttons?
         p.
           Users can navigate between the slides by swiping their finger from right to left on the screen.
     +product-shot()
-      +vertical-iphone('preamble4.gif')
       .description
-        h3 One-click instant preview
+        h2 One-click<br>instant preview
         p.
           Once you press the "Done" button you can see how everyone else on the internet will see your resume deck. The only difference is that they won't see an edit button.
         p. The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
+      +vertical-iphone('preamble4.gif')
     // +vertical-iphone('preamble4.gif')
       p.
         The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
 
-#content-body-text-test
-
-  h1 h1. This is a huge header.
-  h2 h2. This is a large header.
-  h3 h3. This is a medium header.
-  h4 h4. This is a moderate header.
-  h5 h5. This is a small header.
-  h6 h6. This is a tiny header.
-  hr
-
-  p.
-    Many articles have been written on the benefits in store for designers who write. I can testify that they’re endless. Over time, the line that separates writing from speaking, coding and design gradually fades away. Eventually, you realize that they’re simply different forms of communication.
-  .grid-row-test
-    h2.section.dropshadow-example.
-      Do you still think dropshadows are cool?
-    p.section.
-      Lorem ipsum Elit ea deserunt cillum occaecat nostrud laboris sit sit dolor eu elit adipisicing sed consequat eu id reprehenderit Duis nostrud et et occaecat in sit qui officia labore laborum laborum aliqua proident reprehenderit minim Duis.
-  h3 I enjoy creating usable, beautiful interfaces
-  p.
-    I'm not an illustrator, and I don't design icons. But I know enough about typography, composition, and color to turn ideas into beautiful working interfaces.
-  h2 Skill set
-  p.
-    I'm Mark Miro. I specialize in making your customers happy by making their experience with your website, your online communications, and your online marketing pleasurable. Good experiences for your customers will increase their loyalty, engender trust, and decrease the amount of calls/emails about stupid questions.
-  p.
-    Why you should trust me: I don't have a portfolio to prove it, but I do have the skills. In my previous job I created by user experiences for bleeding edge technologies like voice recognition (think Siri), gestures (think xBox Kinect), and eye tracking. I created these experiences by writing software that would allow people to interact with their computers, their phones, and their tablets in new ways. I worked for a bleeding-edge company to create these experiences. However, I've been passionate about the web since before I hit puberty. I realized I need a change of pace when I started working on web projects on my spare time. There are so many bad websites on the web that I decided to do something about it, and so here I am.
-  h2 Do you have the technical abilites?
-  p.
-    For sure! I know HTML5, Javascript, Wordpress, and I've even made an iPad app. I learn new technologies as they come out, but my greatest strengths are in knowing how to create intuitive websites
-  h4 Top interests:
-  ul
-    li Simple flat design
-    li Innovative user interfaces
-    li Working with you beyond doing web design, and instead focusing on business solutions
-    li Consistency
-    li Clean code
-    li Actually solving a problem
-    li web tools and apis
-    li clever / experimental user interfaces
-  p.
-    I don't do websites. I solve problems. You don't need me because you need a website. You need me because you want to solve a problem. For example, if you're a restaurant you want people to know your hours without going to the restaurant. You also want to make it easy for people to know what you're about, what you serve, and why they should go there. Most websites don't do that. But your website will if you let me build it. This is what will make you stand out amongst the crowd.
-  h2 Services
-  ul
-    li Geometric logo design
+  .project
+    h1
+      +project-logo('mortify-logo.png')
+      | Mortify (Built at the Berkeley Health Hackathon)
+      small
+         | 1 dose of Ecstasy = 1/4 liters <br> of wine
+    .description
+      p.
+        What's funny is that this was made for a health hackathon in Berkeley. If anything, this app is not designed to make people any healthier. Our goal was to raise awareness about the relative risks of different activities.
+      p.
+        What came out of the experiment is a fun app that reveals that consuming 20 tablespoons of peanutbutter (liver cancer from aflatoxin B) is as dangerous as taking Ecstasy once. Kind of puts things in perspective doesn't it?
+      p
+        | The app is based on a universal unit of risk called a micromort. Data was sourced from&nbsp;
+        a(href='http://en.wikipedia.org/wiki/Micromort') Wikipedia&nbsp;
+        | and other sources.
       ul
-        li.
-          I'm not an Illustrator, but I can make something that looks incredibly professional. If you want an illustration as part of your logo I can hook you up with an amazing designer by tapping into my network
-    li.
-      Basic website setup. If you need to get a website up and running in under a week, or you are uncomfortable using computers in general, this is the service for you. The website will be professional, polished, but not up to my OCD standards. Of all my services I like providing this one the least (yes I have favorites), but very few people can do this better than me, so I feel strongly about letting me help you with this need.
-    li.
-      Minimalist bespoke website design. I will sit down with you, talk to you about what goals you want to accomplish with your site, who you want to reach, and what general look or mood you want to set. When it comes down to it I'm here to listen to your dreams and desires and "just figure it out". I'll keep you posted on my progress so you don't get surprised at the end with something you never wanted. Once I'm done you'll be left with a website that is easy for you to maintain by using a CMS, and easy for another developer to jump in a tweak something in case something happens to me. I care about my work, so I make sure the stuff nobody sees looks good too.
-  h2 Philosophy
-  p I believe that beauty translates into functionality
-  h3 Why Uncrunchable
-  hr
-  h3
-    | Choose UN
-    b CRUNCH
-    | ABLE if...
-  ul
-    li.
-      You want a website that people can go to, find the information they need in record time, and leave satisfied
-    li.
-      Get potential customers off the fence if they're not sure if they want to do business with you yet
-    li You want the best possible first impression
-    li.
-      You care about the little details, but wish there was someone you could trush to just take care of them when it comes to technologies you aren't an expert in
-    li.
-      You want someone who will go beyond building a website that "looks good enough" and try to understand your business, your customers, why you're different, and how the website will fit into your overall business strategy
-    li.
-      You want to be confident that if anything happens to me after the website is complete, then you'll be able to find someone to make any changes you want with ease
-    li.
-      You want a website with big sexy images that take over the whole screen. I can do photography, but if you want something amazing I can refer you to someone so good they'll know your socks off.
-    li.
-      You want some who you can throw ideas at and know they have the skill set to make it happen.
-  hr
-  h4 Web design and iPhone/iPad/Android app development for small to medium sized businesses
-  hr
-  h3 Get off this website if:
-  ul
-    li You still think drop shadows and glossy buttons are cool
-    li If you think this website looks good: link
-    li You tend to think EVERYTHING IS IMPORTANT
-    li You offer plumbing + poodle day care services and you want a website that encompasses both
-    li You don't think you need a mobile website
-    li You've never heard of HTML5
-    li If you tend to say: "I don't care how it looks, I just want it to be functional"
-  p.
-    My goal is to one day create the kind of impeccable work that only a few people in the world are capable of. I want to create things that trancsends the sum of it's parts.
-  h3 Some projects I've worked on
-  ul
-    li Preable
-    li Fingerpaint
-    li Color picker for artists
-    li TEDx
-  section.controls
-    a.button Continue
-    br
-    a.button.red Cancel
-    br
-    a.button.blue Submit
-    br
-    a.button.quiet Submit
+        li Kevin Nygen (iOS development)
+        li Sean Ho (Math crunching, presenter)
+        li Me (Design + some iOS help)
+
+  .project
+    h1
+      | ITS Website (Built at UC Davis)
+      small Porting an old static website to an advanced CMS-driven one
+    .description
+      p.
+        The old website was in need of attention. The entire website was hand-coded in PHP. We wanted to reorganize and update the content from the old website, create a new website with a better look, and have a system that is easy for non-programmers to maintain.
+    +product-shot()
+      h3 Before
+      img.browser-screenshot(src='img/its-website-old.png')
+      br
+      br
+      br
+      h3 After
+      img.browser-screenshot(src='img/its-website-new.png')
+
+  a(href='mailto:contact@markmiro.com').button.sticky-contact Contact Me
 
 //- include foundation

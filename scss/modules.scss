@@ -20,9 +20,28 @@
     @include grid-row();
     h1 {
         font-size: 5rem;
-        font-weight: bold;
+        font-weight: 300;
+        letter-spacing: -0.2;
         line-height: 1.25;
-        margin: 4rem;
+        padding: 4rem;
+        background: black;
+        color: white;
+    }
+    .will-we {
+        padding: 4rem;
+        padding-bottom: 0;
+        @include grid-row();
+        .get-along, .not-get-along {
+            @extend .medium-6;
+            @extend .columns;
+        }
+    }
+}
+
+.header {
+    @extend .row;
+    h2 {
+        padding: 4rem;
     }
 }
 
@@ -187,24 +206,41 @@
     }
 }
 
+.browser-screenshot {
+    display: block;
+    margin-top: -35px;
+    margin-left: -57px;
+    margin-bottom: -79px;
+}
+
 .project {
     @include grid-row();
     // @extend .centered-block;
     // @extend .row;
     // max-width: 800px;
-    border-top: 1rem solid $off-white;
-    margin-top: 8rem;
+    border-top: 0.5rem solid black;
+    margin-top: 6rem;
+    padding: 0 4rem;
+
+    & > .description {
+        max-width: $content-width;
+    }
 
     & > h1 {
         // text-align: center;
         font-size: 100%;
-        letter-spacing: -0.06rem;
+        letter-spacing: 0;
         small {
+            letter-spacing: -0.06rem;
+            line-height: 1.25;
             color: $main-color;
+            background: $off-white;
             max-width: 700px;
             font-size: 3rem;
-            font-weight: 900;
-            font-style: italic;
+            font-weight: 200;
+            padding: 2rem 3rem;
+            margin-top: 1.5rem;
+            // font-style: italic;
             // text-align: center;
         }
     }
@@ -217,24 +253,27 @@
     }
 
     @media #{$medium-up} {
-        & > .description, & > h1 {
-            margin: 4rem 4rem;
+        & > h1 {
+            margin: 4rem 0 0 0;
+        }
+        & > .description {
+            margin: 2rem 0;
         }
     }
 
     .logo {
         width: 2rem;
         height: 2rem;
-        margin-right: 0.5rem;
+        margin-right: 1rem;
     }
 
     .product-shot {
         @include grid-row();
-        padding: 1rem 0;
+        padding: 2rem 0;
         @media #{$medium-up} {
-            padding: 2rem 3rem;
+            padding: 3rem 0rem;
         }
-        border-top: 1px solid $off-white;
+        border-top: 1px solid $light-gray;
         .iphone-5-vertical {
             // @extend .medium-6;
             // @extend .columns;
@@ -264,5 +303,31 @@
 
     .product-shot p {
         // float: left;
+    }
+}
+
+#content-body .sticky-contact.button {
+    top: 1rem;
+    right: 1rem;
+    position: fixed;
+}
+
+.about-section {
+
+}
+
+footer.footer {
+    @include grid-row();
+    // background: black;
+    color: white;
+    padding: 1rem 4rem;
+    margin-top: 4rem;
+    .contact.button {
+        width: 100%;
+        padding: 2rem 0;
+        font-size: 4rem;
+        font-weight: 200 !important;
+        // color: black;
+        // background: white;
     }
 }
