@@ -4,7 +4,7 @@ include _mixins
 
   .hero
     h1.
-      Afraid you won't find that
+      Afraid you won't find a
       developer who can<br>
       also design?
 
@@ -26,7 +26,7 @@ include _mixins
           li Offer plumbing + poodle day care services and you want a website that encompasses the breadth that your company has to offer
           li Still believe drop shadows and glossy buttons are cool
           li Tend to think EVERYTHING IS IMPORTANT
-          li You think feature creep is a good thing
+          li You don't understand why feature creep is a problem
 
   .project
     h1
@@ -36,13 +36,13 @@ include _mixins
     +product-shot()
       +vertical-iphone('teal-phonegap.png')
       .description
-        h2 State-of-the-art
+        h2 A web app that passes<br>for native
         p.
-          This app showcases the state-of-the-art when it comes to using web technologies to build a mobile app. At the time of building it, there were very few robust, and fast tools to build upon. The screen tansitions and all the UI was coded from scratch.
+          There were very few robust, and fast tools to build upon when I built the app. The screen tansitions and all the UI was coded from scratch.
         p.
           In the end, however, making the app appear like a native iPhone app proved to be more trouble than it was worth. In any case, I love showing this off because it shows that I can program right up to the limit of what iOS Safari can handle.
         p.
-          Making iPhone apps with HTML5, CSS, and Javascript is several times more difficult than making the same app just for a desktop browser.
+          Building iPhone apps with HTML5, CSS, and Javascript is several times more difficult than doing the same thing for desktop web browsers.
     +product-shot()
       .description
         h2 The idea behind...
@@ -59,7 +59,7 @@ include _mixins
       .description
         h2 Gray, white, gray, white...
         p.
-          A unique motif throughout the design of the app is the alternating white and gray sections. No popular apps at the moment of development used alternating stripes to brand the app.
+          A unique motif throughout the the app is the alternating white and gray sections. No popular apps at the moment of development used alternating stripes to brand the app.
         p.
           The motif can be used for progress bars, or sections or disabled buttons.
       +vertical-iphone('teal-phonegap4.gif')
@@ -68,11 +68,10 @@ include _mixins
       .description
         h2 Avoiding the<br>uncanny valley
         p.
-          I wanted to avoid the <em>uncanny valley</em> by making interface components that don't look like anything you'd see on iOS or Android. They still behave like native controls, but they just don't look like them.
-        h3 Built with...
+          I wanted to avoid the <em>uncanny valley</em> by making interface components that don't look like anything you'd see on iOS or Android, but still behave like native controls.
+        h4 Built with...
         .row
           .medium-6.columns(style='padding: 0;')
-            h5 Development
             ul
               li PhoneGap
               li jQuery
@@ -81,7 +80,6 @@ include _mixins
               li Require.js
               li Ruby
           .medium-6.columns(style='padding: 0;')
-            h5 Design
             ul
               li HTML5, CSS
               li Sass
@@ -148,19 +146,21 @@ include _mixins
       p.
         The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.
 
-  .project
+  //- .project
     h1
       +project-logo('mortify-logo.png')
       | Mortify (Built at the Berkeley Health Hackathon)
       small
-         | 1 dose of Ecstasy = 1/4 liters <br> of wine
+         | Skiing is as deadly as Ecstasy*
     .description
       p.
-        What's funny is that this was made for a health hackathon in Berkeley. If anything, this app is not designed to make people any healthier. Our goal was to raise awareness about the relative risks of different activities.
+        * The statistic above is designed to turn heads, but it highlights a problem when we compare risk. We know that both skiing and Ecstasy are dangerous, but the statistic about quantifies it. Each activity will increase your risk of death by about 0.5 micromorts. The news media constantly bombards us about unsafe cars, unsafe pigments used in toys, flamable clothes, and so on.
       p.
-        What came out of the experiment is a fun app that reveals that consuming 20 tablespoons of peanutbutter (liver cancer from aflatoxin B) is as dangerous as taking Ecstasy once. Kind of puts things in perspective doesn't it?
+        We can't just avoid all risk. We need to be smart about it, which is what the micromort unit is for. We can quantify the risk of sudden death between almost any two risky activities. It's not perfect, but the unit finally allows us to make informed decisions about risk.
+      p.
+        What's funny is that this was made for a health hackathon in Berkeley. If anything, this app is not designed to make people any healthier. Our goal was to raise awareness about the relative risks of different activities.
       p
-        | The app is based on a universal unit of risk called a micromort. Data was sourced from&nbsp;
+        | What came out of the experiment is a fun and informative app. Data was sourced from&nbsp;
         a(href='http://en.wikipedia.org/wiki/Micromort') Wikipedia&nbsp;
         | and other sources.
       ul
@@ -171,12 +171,13 @@ include _mixins
   .project
     h1
       | ITS Website (Built at UC Davis)
-      small Porting an old static website to an advanced CMS-driven one
+      small Porting an old static<br>website to an advanced<br>CMS-driven one
     .description
       p.
         The old website was in need of attention. The entire website was hand-coded in PHP. We wanted to reorganize and update the content from the old website, create a new website with a better look, and have a system that is easy for non-programmers to maintain.
     +product-shot()
       h3 Before
+      p The screenshot shown is a different website that uses the same template that the old ITS website used.
       img.browser-screenshot(src='img/its-website-old.png')
       br
       br

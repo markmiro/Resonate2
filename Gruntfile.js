@@ -163,6 +163,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
   // grunt.loadNpmTasks('grunt-ruby-haml');
 
-  grunt.registerTask('build', ['sass', 'jade:dev', 'jade:dev2', 'jade:dev3', 'concat']);
+  grunt.registerTask('build', ['sass', 'jade:dev2', 'jade:dev3', 'concat']);
   grunt.registerTask('default', ['build','watch']);
 }

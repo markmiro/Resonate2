@@ -1,3 +1,4 @@
+- var DEBUG = true
 mixin product-shot()
   .product-shot
     if block
@@ -16,25 +17,45 @@ mixin project-logo(logo)
   img.logo(src='img/'+logo)
 
 mixin page(title)
-  doctype html
-  html(lang='en')
-    head
-      meta(charset='utf-8')
-      meta(name='viewport', content='width=device-width, initial-scale=1.0')
-      if (title)
-        title= title + ' - Mark Miro'
-      else
-        title Mark Miro
-      link(rel='stylesheet', href='build/app.css')
-      //if lt IE 9
-        script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
-      script(src='bower_components/modernizr/modernizr.js')
-    body
-      include header
-      #content
-        block
-      include footer
-      script(src='bower_components/jquery/jquery.js')
-      script(src='node_modules/grunt-contrib-jade/node_modules/jade/runtime.js')
-      script(src='http://localhost:35729/livereload.js')
-      script(src='build/app.min.js')
+  if DEBUG
+    doctype html
+    html(lang='en')
+      head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        if (title)
+          title= title + ' - Mark Miro'
+        else
+          title Mark Miro
+        link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400')
+        link(rel='stylesheet', href='build/app.css')
+        //if lt IE 9
+          script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+        script(src='bower_components/modernizr/modernizr.js')
+      body
+        include header
+        #content
+          block
+        include footer
+        script(src='bower_components/jquery/jquery.js')
+        script(src='node_modules/grunt-contrib-jade/node_modules/jade/runtime.js')
+        script(src='http://localhost:35729/livereload.js')
+        script(src='build/app.min.js')
+  else
+    doctype html
+    html(lang='en')
+      head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        if (title)
+          title= title + ' - Mark Miro'
+        else
+          title Mark Miro
+        link(rel='stylesheet', href='build/app.css')
+        //if lt IE 9
+          script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+      body
+        include header
+        #content
+          block
+        include footer

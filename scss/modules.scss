@@ -20,12 +20,15 @@
     @include grid-row();
     h1 {
         font-size: 5rem;
-        font-weight: 300;
+        font-weight: 200;
         letter-spacing: -0.2;
         line-height: 1.25;
-        padding: 4rem;
-        background: black;
-        color: white;
+        padding: 6rem 4rem 7rem;
+        // background: black;
+        // color: white;
+        border: .2rem solid $main-color;
+        border-left: 0;
+        border-right: 0;
     }
     .will-we {
         padding: 4rem;
@@ -41,7 +44,7 @@
 .header {
     @extend .row;
     h2 {
-        padding: 4rem;
+        padding: 4rem 4rem 2rem;
     }
 }
 
@@ -218,7 +221,7 @@
     // @extend .centered-block;
     // @extend .row;
     // max-width: 800px;
-    border-top: 0.5rem solid black;
+    border-top: 0.2rem solid black;
     margin-top: 6rem;
     padding: 0 4rem;
 
@@ -232,14 +235,15 @@
         letter-spacing: 0;
         small {
             letter-spacing: -0.06rem;
-            line-height: 1.25;
+            line-height: 1.4;
             color: $main-color;
             background: $off-white;
             max-width: 700px;
             font-size: 3rem;
             font-weight: 200;
-            padding: 2rem 3rem;
+            padding: 2rem;
             margin-top: 1.5rem;
+            // border: 0.15rem solid;
             // font-style: italic;
             // text-align: center;
         }
@@ -310,6 +314,7 @@
     top: 1rem;
     right: 1rem;
     position: fixed;
+    z-index: 1000;
 }
 
 .about-section {
