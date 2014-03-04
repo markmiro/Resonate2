@@ -5,28 +5,56 @@ include _mixins
   .hero
     h1.
       Afraid you won't find a
-      developer who can<br>
-      also design?
+      developer who can also design?
 
-    .will-we
-      .get-along
+    .about-me
+      .we-will-get-along
         h3.
-          I'd love working with you if you...
+          My favorite people to work with...
         ul
           li Are building customer-facing products
           li Love simple, flat design
           li Need innovative user interfaces
-          li Are a strong proponent of visual consistency
+          li Are strong proponents of visual consistency
           li Appreciate clean code
           li Do user testing / market research before starting work on a solution
-      .not-get-along
-        h3
-          | We're not a match if you...
+      .bio
+        h3 About me
+        p I'm a front-end developer who's built innovative prototype apps for Intel, Dell, Lenovo, etc...
+        p Im passionate about data-driven user interfaces.
+      .skills
+        h3 Core skills
         ul
-          li Offer plumbing + poodle day care services and you want a website that encompasses the breadth that your company has to offer
-          li Still believe drop shadows and glossy buttons are cool
-          li Tend to think EVERYTHING IS IMPORTANT
-          li You don't understand why feature creep is a problem
+          li JS
+            ul
+              li jQuery
+              li Backbone
+              li Require.js
+              li Grunt
+              li Bower
+              li Node
+          li CSS
+            ul
+              li Responsive design
+              li Media queries
+              li Sass
+              li LESS
+          li HTML5
+            ul
+              li Jade
+              li HAML
+      .clearfix
+      .more-skills
+        h3 Additional skills
+        ul
+          li Objective-C
+          li C#
+          li Java
+          li ActionScript 3
+          li Ruby
+          li Python
+          li PHP
+          li Regular Expressions
 
   .project
     h1
@@ -34,7 +62,7 @@ include _mixins
       | Teal (Built at Ask Ziggy)
       small What happens when you push the iOS browser to it's limit?
     +product-shot()
-      +vertical-iphone('teal-phonegap.png')
+      +vertical-iphone('teal-phonegap3.gif')
       .description
         h2 A web app that passes<br>for native
         p.
@@ -43,18 +71,6 @@ include _mixins
           In the end, however, making the app appear like a native iPhone app proved to be more trouble than it was worth. In any case, I love showing this off because it shows that I can program right up to the limit of what iOS Safari can handle.
         p.
           Building iPhone apps with HTML5, CSS, and Javascript is several times more difficult than doing the same thing for desktop web browsers.
-    +product-shot()
-      .description
-        h2 The idea behind...
-        p.
-          ...the app was to create a hotel booking app that could also be used by voice. The target is busy frequent travellers. Sometimes they might be booking a hotel last minute in their car, and this app is designed to be the solution to that.
-      +vertical-iphone('teal-phonegap1.gif')
-    +product-shot()
-      +vertical-iphone('teal-phonegap3.gif')
-      .description
-        h2 The <span style='font-size: 1.2rem;'>small</span> details
-        p.
-          Page transitions were difficult to pull off, but in the end it's what makes the app feel right.
     +product-shot()
       .description
         h2 Gray, white, gray, white...
@@ -117,10 +133,11 @@ include _mixins
     +product-shot()
       +vertical-iphone('preamble1.gif')
       .description
-        h2 WYSIWYG on mobile?
-          small Yes, and lets make the whole app in a single hackathon
+        h2 WYSIWYG on your phone?
         p.
-          I decided on using a wizzywig UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
+          This is not the first time you've seen a WYSIWYG user interface, but phones are special because there's very little room for UI. To top it off, I attempted this risk during a hackathon. I like how it turned out.
+        p.
+          I decided on using a WYSIWYG UI so that I did not have to create two user interfaces. I don't know why more of these types of user interfaces don't exist on the internet.
     +product-shot()
       .description
         h2 Bullets are useful. Let's use them everywhere
@@ -137,7 +154,7 @@ include _mixins
           Users can navigate between the slides by swiping their finger from right to left on the screen.
     +product-shot()
       .description
-        h2 One-click<br>instant preview
+        h2 One-touch<br>instant preview
         p.
           Once you press the "Done" button you can see how everyone else on the internet will see your resume deck. The only difference is that they won't see an edit button.
         p. The "Request a Meeting" link on the top of each slide acts as a call to action. Pressing it takes you to the contact page.

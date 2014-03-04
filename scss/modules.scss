@@ -19,7 +19,7 @@
 .hero {
     @include grid-row();
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: 200;
         letter-spacing: -0.2;
         line-height: 1.25;
@@ -30,15 +30,74 @@
         border-left: 0;
         border-right: 0;
     }
-    .will-we {
-        padding: 4rem;
-        padding-bottom: 0;
-        @include grid-row();
-        .get-along, .not-get-along {
-            @extend .medium-6;
+
+    .about-me {
+         padding: 4rem;
+         padding-bottom: 0;
+         & > * > ul {
+            margin: 0;
+         }
+         & > * > ul > li {
+            list-style: none;
+            font-size: 2rem;
+            font-weight: 200;
+         }
+        .bio {
+            @extend .medium-3;
             @extend .columns;
+            padding-left: 0;
+            p {
+                margin-top: 1rem;
+            }
+        }
+        .skills > ul > li {
+            @extend .medium-3;
+            @extend .columns;
+            // padding-left: 0;
+            border-left: 1px solid $off-white;
+        }
+
+        .skills > ul > li > ul > li {
+            font-weight: normal;
+        }
+
+        .more-skills {
+            margin-top: 2rem;
+            ul {
+                margin: 0;
+            }
+            li {
+                display: inline;
+                // list-style: none;
+                // border-left: 1px solid $light-gray;
+                // padding: 0 1rem;
+                &:after {
+                    content: ", ";
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 1;
+                    color: $off-white;
+                }
+                &:last-child:after {
+                    content: "";
+                }
+            }
+        }
+
+        .we-will-get-along {
+            li {
+                border-bottom: 1px solid $off-white;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+            margin-bottom: 4rem;
+        }
+        hr {
+            margin: 4rem 0;
         }
     }
+
 }
 
 .header {
@@ -221,7 +280,7 @@
     // @extend .centered-block;
     // @extend .row;
     // max-width: 800px;
-    border-top: 0.2rem solid black;
+    border-top: 0.2rem solid $main-color;
     margin-top: 6rem;
     padding: 0 4rem;
 
@@ -324,9 +383,10 @@
 footer.footer {
     @include grid-row();
     // background: black;
-    color: white;
-    padding: 1rem 4rem;
-    margin-top: 4rem;
+    // color: white;
+    border-top: 0.2rem solid $main-color;
+    padding: 2rem 4rem 4rem;
+    margin-top: 6rem;
     .contact.button {
         width: 100%;
         padding: 2rem 0;
