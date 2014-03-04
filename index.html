@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Miro</title>
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400">
     <link rel="stylesheet" href="build/app.css">
     <!--if lt IE 9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
     -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
     <header class="header">
@@ -145,12 +143,18 @@
           </h1>
           <div class="product-shot">
             <div class="ipad-horizontal"><img src="img/rhapsody1.gif"></div>
-            <div class="description">
-              <h2>The concept</h2>
-              <p>
-                What if you could control your iPhone or iPad music app without taking your eyes off the road? The app could play any popular song requested.
-                
-              </p>
+            <div style="margin-top: 2rem" class="row">
+              <div class="medium-6 columns">
+                <h2>Native app</h2>
+                <p>Given that the previous app only looked native, I have to point out that this one was coded using Objective-C.</p>
+              </div>
+              <div class="medium-6 columns">
+                <h2>The concept</h2>
+                <p>
+                  What if you could control your iPhone or iPad music app without taking your eyes off the road? The app could play any popular song requested.
+                  
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -232,9 +236,5 @@
       <p>&copy;2014&nbsp; Mark Miro
       </p>
     </footer>
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="node_modules/grunt-contrib-jade/node_modules/jade/runtime.js"></script>
-    <script src="http://localhost:35729/livereload.js"></script>
-    <script src="build/app.min.js"></script>
   </body>
 </html>
