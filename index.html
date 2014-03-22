@@ -4,19 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Miro</title>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400">
     <link rel="stylesheet" href="build/app.css">
     <!--if lt IE 9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
     -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-4451696-1', 'markmiro.com');
-      ga('send', 'pageview');
-    </script>
     <header class="header">
       <h2>Mark Miro<small id="subhead">Front-end web and app developer / designer</small></h2>
     </header>
@@ -100,7 +94,7 @@
           </div>
         </div>
         <div class="project">
-          <h1><img src="img/teal-logo.png" class="logo">Teal (Built at Ask Ziggy)<small>What happens when you push the iOS browser to it's limit?</small>
+          <h1><img src="img/teal-logo.png" class="logo">Teal (Built at Ask Ziggy)<small>A hotel booking app that pushes iOS to it's limit</small>
           </h1>
           <div class="product-shot">
             <div class="medium-6 columns">
@@ -176,7 +170,7 @@
           </div>
         </div>
         <div class="project">
-          <h1><img src="img/preamble-logo.png" class="logo">Preamble (Built at the Launch Hackathon)<small>What if resumés were invented in the internet era?</small>
+          <h1><img src="img/preamble-logo.png" class="logo">Preamble (Built at the Launch Hackathon)<small>What does the resumé of the future look like?</small>
           </h1>
           <div class="description">
             <p>The main was to build a slide deck that acts as a clutter-free resume for mobile</p>
@@ -253,5 +247,9 @@
       <p>&copy;2014&nbsp; Mark Miro
       </p>
     </footer>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="node_modules/grunt-contrib-jade/node_modules/jade/runtime.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="build/app.min.js"></script>
   </body>
 </html>
