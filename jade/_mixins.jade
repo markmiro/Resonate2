@@ -4,6 +4,12 @@ mixin product-shot()
     if block
       block
 
+mixin more()
+  if block
+    .toggle-block
+      block
+  a.toggle-link more...
+
 mixin vertical-iphone(screenshot)
   .medium-6.columns
     .iphone-5-vertical
@@ -37,7 +43,8 @@ mixin page(title)
         #content
           block
         include footer
-        script(src='bower_components/jquery/jquery.js')
+        script(src='bower_components/jquery/dist/jquery.js')
+        script(src='bower_components/jquery.scrollTo/jquery.scrollTo.js')
         script(src='node_modules/grunt-contrib-jade/node_modules/jade/runtime.js')
         script(src='http://localhost:35729/livereload.js')
         script(src='build/app.min.js')

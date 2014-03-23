@@ -16,6 +16,47 @@
     max-width: $content-width;
 }
 
+.big-thin-text {
+    font-size: 2rem;
+    font-weight: 200;
+    position: relative;
+}
+
+// .toggle-block {
+//     opacity: 1;
+//     height: auto;
+//     -webkit-transition: opacity 1s ease;
+//     -webkit-transition: height 1s ease;
+//     &.hidd {  
+//         opacity: 0;
+//         height: 0;
+//         z-index: 100;
+//     }
+// }
+// .toggle-link {
+//     z-index: 200;
+//     position: relative;
+// }
+
+.toggle-block {
+    display: block;
+    -webkit-transition: all 0.4s ease;
+    // -webkit-transition: opacity 0.3s ease, max-height 0.3s ease, -webkit-transform 0.3 ease;
+    -webkit-transform: translateZ(0) translateY(-10px);
+    // -webkit-transform: perspective(800px) translateZ(-300px) rotateX(30deg);
+    opacity: 0; 
+    height: 0;
+    // max-height: 0;
+    overflow: hidden;
+}
+
+.toggle-block.active {
+    -webkit-transform: perspective(800px) translateZ(0) rotateY(0) translateY(0);
+    opacity: 1;
+    height: auto;
+    // max-height: 1000px;
+}
+
 .hero {
     @include grid-row();
     h1 {
@@ -36,77 +77,81 @@
         max-width: $content-width;
     }
 
-    .about-me {
-         padding: 4rem;
-         padding-bottom: 0;
-         & > * > ul {
-            margin: 0;
-         }
-         & > * > ul > li {
-            list-style: none;
-            font-size: 2rem;
-            font-weight: 200;
-         }
-        .bio {
-            @extend .medium-3;
-            @extend .columns;
+}
+
+.about-me {
+    @include grid-row();
+
+    padding: 0 4rem;
+    padding-bottom: 0;
+
+    .skill-column {
+        @extend .medium-3;
+        @extend .columns;
+        &:first-child {
             padding-left: 0;
-            p {
-                margin-top: 1rem;
-            }
+            background: red;
         }
-        .skills > ul > li {
-            @extend .medium-3;
-            @extend .columns;
-            // padding-left: 0;
+        // padding-left: 0;
+        ul {
             border-left: 1px solid $off-white;
-        }
-
-        .skills > ul > li > ul > li {
             font-weight: normal;
-        }
-
-        .more-skills {
-            margin-top: 2rem;
-            ul {
-                margin: 0;
-            }
+            margin: 0;
             li {
-                display: inline;
-                // list-style: none;
-                // border-left: 1px solid $light-gray;
-                // padding: 0 1rem;
-                &:after {
-                    content: ", ";
-                    font-weight: 400;
-                    font-size: 3rem;
-                    line-height: 1;
-                    color: $off-white;
-                }
-                &:last-child:after {
-                    content: "";
-                }
+                list-style: none;
+                margin-left: 1rem;
             }
-        }
-
-        .we-will-get-along {
-            li {
-                border-bottom: 1px solid $off-white;
-                &:last-child {
-                    border-bottom: 0;
-                }
-            }
-            margin-bottom: 4rem;
-        }
-        hr {
-            margin: 4rem 0;
         }
     }
 
+    h4 {
+        @extend .big-thin-text;
+    }
+
+    .more-skills {
+        margin-top: 2rem;
+        ul {
+            margin: 0;
+        }
+        li {
+            display: inline;
+            // list-style: none;
+            // border-left: 1px solid $light-gray;
+            // padding: 0 1rem;
+            &:after {
+                content: "\2022";
+                font-weight: 100;
+                line-height: 1;
+                color: $light-gray;
+                padding: 0 0.5rem;
+            }
+            &:last-child:after {
+                content: "";
+            }
+        }
+    }
+
+    .we-will-get-along {
+        ul {
+            margin: 0;
+        }
+        li {
+            @extend .big-thin-text;
+            list-style: none;
+            border-bottom: 1px solid $off-white;
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+        margin-bottom: 4rem;
+    }
+    hr {
+        margin: 4rem 0;
+    }
 }
 
 .header {
-    @extend .row;
+    @include grid-row();
     h2 {
         padding: 4rem 4rem 2rem;
     }
@@ -278,6 +323,10 @@
     margin-top: -35px;
     margin-left: -57px;
     margin-bottom: -79px;
+}
+
+.project-item {
+
 }
 
 .project {
