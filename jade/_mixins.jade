@@ -1,6 +1,6 @@
 - var DEBUG = true
 mixin product-shot()
-  .product-shot
+  section.product-shot
     if block
       block
 
@@ -12,11 +12,11 @@ mixin more()
 
 mixin vertical-iphone(screenshot)
   .medium-6.columns
-    .iphone-5-vertical
+    .device.iphone-5s-flat-vertical
       img(src='img/'+screenshot)
 
 mixin horizontal-ipad(screenshot)
-  .ipad-horizontal
+  .device.ipad-flat-horizontal
     img(src='img/'+screenshot)
 
 mixin project-logo(logo)

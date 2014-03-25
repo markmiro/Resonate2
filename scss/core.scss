@@ -41,12 +41,20 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+    color: $main-color;
     small {
         display: block;
         line-height: 1.25;
         color: $secondary-color;
     }
 }
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
 
 hr {
     border-color: $light-gray;

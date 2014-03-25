@@ -9,6 +9,29 @@
 // Navigation
 // Re-appearing chunks of content, like a user info card or sidebar
 
+@function img($name) {
+    @return url(../img/#{$name}.png);
+}
+
+// https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html 
+//
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+ 
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
 .centered-block {
     position: relative;
     margin-left: auto;
@@ -22,27 +45,11 @@
     position: relative;
 }
 
-// .toggle-block {
-//     opacity: 1;
-//     height: auto;
-//     -webkit-transition: opacity 1s ease;
-//     -webkit-transition: height 1s ease;
-//     &.hidd {  
-//         opacity: 0;
-//         height: 0;
-//         z-index: 100;
-//     }
-// }
-// .toggle-link {
-//     z-index: 200;
-//     position: relative;
-// }
-
 .toggle-block {
     display: block;
-    -webkit-transition: all 0.4s ease;
+    @include transition(all 0.3s $ease-in-out-back);
     // -webkit-transition: opacity 0.3s ease, max-height 0.3s ease, -webkit-transform 0.3 ease;
-    -webkit-transform: translateZ(0) translateY(-10px);
+    @include transform(translateZ(0) translateY(-10px));
     // -webkit-transform: perspective(800px) translateZ(-300px) rotateX(30deg);
     opacity: 0; 
     height: 0;
@@ -51,7 +58,7 @@
 }
 
 .toggle-block.active {
-    -webkit-transform: perspective(800px) translateZ(0) rotateY(0) translateY(0);
+    @include transform(perspective(800px) translateZ(0) rotateY(0) translateY(0));
     opacity: 1;
     height: auto;
     // max-height: 1000px;
@@ -60,11 +67,11 @@
 .hero {
     @include grid-row();
     h1 {
-        font-size: 4rem;
-        font-weight: 200;
+        font-size: 3rem;
+        font-weight: 700;
         letter-spacing: -0.2;
         line-height: 1.25;
-        padding: 6rem 4rem 7rem;
+        padding: 6rem 4rem;
         // background: black;
         // color: white;
         border: .2rem solid $main-color;
@@ -73,7 +80,7 @@
     }
 
     .why {
-        margin: 4rem 4rem;
+        margin: 4rem;
         max-width: $content-width;
     }
 
@@ -154,6 +161,9 @@
     @include grid-row();
     h2 {
         padding: 4rem 4rem 2rem;
+        small {
+            font-weight: 500;
+        }
     }
 }
 
@@ -175,149 +185,6 @@
     }
 }
 
-.device {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    // background-width: $height/2;
-    display: inline-block;
-    position: relative;
-}
-
-.iphone-5-vertical {
-    @extend .device;
-    
-    @media #{$small-only} {
-        $size: 20px;
-        $vertical-bezel-size: 40px;
-
-        border: 8px solid $off-white;
-        border-top-width: $vertical-bezel-size;
-        border-bottom-width: $vertical-bezel-size;
-        border-radius: 12px;
-        z-index: 100;
-
-        &:before {
-            $width: 40px;
-            z-index: 200;
-            content: "";
-            display: block;
-            position: absolute;
-            width: $width;
-            height: 6px;
-            margin-left: -$width/2;
-            top: -22px;
-            left: 50%;
-            border-radius: 999px;
-            border: 1px solid $light-gray;
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: $size;
-            height: $size;
-            margin-left: -$size/2;
-            bottom: -10px - $size;
-            left: 50%;
-            border-radius: 999px;
-            border: 1px solid $light-gray;
-        }
-        img {
-            position: relative;
-            width: 200px;
-            outline: 1px solid $main-color;
-        }
-    }
-    @media #{$medium-up} {
-        $scale: 0.8;
-        $width: 758px * $scale;
-        $height: 1605px * $scale;
-        $top: 234px * $scale;
-        $left: 62px * $scale;
-        $screen-width: 640px * $scale;
-        background-image: url(../img/iphone-5-black-vertical.png);
-        width: $width/2;
-        height: $height/2;
-        img {
-            width: $screen-width/2;
-            top: $top/2;
-            left: $left/2;
-            display: block;
-            position: absolute;
-        }
-    }
-}
-
-.ipad-horizontal {
-    @extend .device;
-
-    @media #{$small-only} {
-        $size: 10px;
-        $vertical-bezel-size: 24px;
-
-        border: 14px solid $off-white;
-        border-left-width: $vertical-bezel-size;
-        border-right-width: $vertical-bezel-size;
-        border-radius: 8px;
-        z-index: 100;
-
-        &:before {
-            $width: 5px;
-            z-index: 200;
-            content: "";
-            display: block;
-            position: absolute;
-            width: $width;
-            height: $width;
-            margin-top: -$width/2;
-            left: -14px;
-            top: 50%;
-            border-radius: 999px;
-            border: 1px solid $secondary-color;
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: $size;
-            height: $size;
-            margin-top: -$size/2;
-            right: -7px - $size;
-            top: 50%;
-            border-radius: 999px;
-            border: 1px solid $secondary-color;
-        }
-        img {
-            position: relative;
-            width: 300px;
-            outline: 1px solid $main-color;
-        }
-    }
-
-    @media #{$medium-up} {
-        $scale: 0.6;
-        $width: 2503px * $scale;
-        $height: 1766px * $scale;
-        $top: 115px * $scale;
-        $left: 227px * $scale;
-        $screen-width: 2048px * $scale;
-        background-image: url(../img/ipad-black-horizontal.png);
-        width: $width/2;
-        height: $height/2;
-
-        img {
-            top: $top/2;
-            left: $left/2;
-            width: $screen-width/2;
-            // height: 640px;
-            display: block;
-            position: absolute;
-        }
-    }
-}
-
 .browser-screenshot {
     display: block;
     margin-top: -35px;
@@ -326,35 +193,180 @@
 }
 
 .project-item {
+    @include grid-row();
+    height: 30rem;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0.2rem solid $main-color;
+    border-left: 0;
+    border-right: 0;
+    .logo {
+        height: 2rem;
+        margin-right: 1rem;
+    }
+    h1 {
+        font-size: 1rem;
+        small {
+            margin-top: 1rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: $main-color;
+            width: 75%;
+        }
+    }
+    .content {
+        padding: 0 4rem;
+    }
+}
 
+
+.projects {
+    // -webkit-perspective: 600px;
+    // @include transform(scale(0.3, 0.3));
 }
 
 .project {
     @include grid-row();
+
+    -webkit-transition-timing-function: $ease-in-out-quart !important;
+    -webkit-transition-duration: 0s !important;
+
+    &.-collapsed {
+        @include transform(scale(0.25, 0.25));
+    }
+
+    &.collapsed {
+        -webkit-transition-duration: 0.3s !important;
+        height: 20rem;
+        overflow: hidden;
+        // margin-bottom: 0;
+        // -webkit-transform: rotateX(-5deg);
+        // margin-top: 0.2rem;
+        // border-bottom: 0;
+        background: $off-white;
+
+        &:last-child:after {
+            background: none;
+        }
+
+        &:nth-child(even) {
+            h1 small {
+                text-align: right;
+                right: 6rem;
+            }
+            section.product-shot:nth-of-type(1) {
+                .device, .browser-screenshot {
+                    // @include transform(translateX(40px) translateY(-150px) rotate(-10deg));
+                }
+            }
+        }
+
+        h1 {
+            small {
+                z-index: 200;
+                position: absolute;
+                margin-top: 0;
+                // color: $off-white;
+                opacity: 1;
+                @include transform(translateY(-0.5rem));
+                // -webkit-transform: scale(0.5, 0.5);
+            }
+        }
+        .product-shot > p, > h2, h3, h4, h5, h6, .logo, .name, > .description {
+            opacity: 0;
+            max-height: 0;
+            height: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px; width: 1px; 
+            margin: -1px; padding: 0; border: 0;
+        }
+
+        section.product-shot:nth-of-type(1) {
+            border-top: 0;
+            // padding-top: 0.5rem;
+            position: relative;
+            z-index: 100;
+            // -webkit-transform: scale(0.5, 0.5);
+            // $stuff: "grayscale(0.75) contrast(0.8)";
+            // @include filter(blur, 50px);
+            @include filter(grayscale, 1);
+            // @include filter(contrast, 0.8);
+            opacity: 0.1;
+            @include transform(translateX(0px) translateY(-110px));
+            .device, .browser-screenshot {
+                // -webkit-filter: blur(10px);
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            // background: red;
+            background: $main-color;
+            // height: 18rem;
+            section.product-shot:nth-of-type(1) {
+                h1, h2, h3, h4, h5, h6, .description {
+                    color: black;
+                }
+                @include filter(contrast, 70%);
+                opacity: 0.50;
+                @include transform(translateX(0) translateY(-130px));
+                .device, .browser-screenshot {
+                    // -webkit-transform: translateX(0);
+                }
+            }
+            h1 small {
+                // color: black;
+                color: white;
+                opacity: 1;
+                // @include transform(translateY(-2rem));
+            }
+        }
+        // -webkit-transform: scale(0.5, 0.5);
+    }
+
+    &, h2, h3, h4, h5, h6, h1 small, p, li, .name, .product-shot, .product-shot .device, .browser-screenshot {
+        @include transform(translateZ(0));
+        -webkit-transition-property: height, color, padding, margin, opacity, background, -webkit-transform;
+        -webkit-transition-duration: 0.3s;
+        -webkit-transition-timing-function: $ease-in-out-back;
+        // -webkit-transition: height, padding 0.3s ease, margin 0.3s ease, max-height, border, opacity 0.3s ease;
+        // max-height: 1000px;
+        // opacity: 1;
+        // overflow: hidden;
+    }
+
     // @extend .centered-block;
     // @extend .row;
     // max-width: 800px;
-    border-top: 0.2rem solid $main-color;
-    margin-top: 6rem;
-    padding: 0 4rem;
+    padding: 0rem 4rem 4rem;
+    border-bottom: 0.2rem solid $main-color;
+    &:first-child {
+        border-top: 0.2rem solid $main-color;
+    }
 
     & > .description {
         max-width: $content-width;
+        border-top: 0.2rem solid $off-white;
     }
 
     & > h1 {
         // text-align: center;
         font-size: 100%;
         letter-spacing: 0;
+        .name {
+            display: inline;
+        }
         small {
             letter-spacing: -0.06rem;
             line-height: 1.4;
             color: $main-color;
-            background: $off-white;
+            // background: $off-white;
             max-width: 750px;
             font-size: 3rem;
-            font-weight: 200;
-            padding: 2rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
             margin-top: 1.5rem;
             // border: 0.15rem solid;
             // font-style: italic;
@@ -374,13 +386,13 @@
             margin: 4rem 0 0 0;
         }
         & > .description {
-            margin: 2rem 0;
+            padding: 2rem 0;
         }
     }
 
     .logo {
-        width: 2rem;
-        height: 2rem;
+        // width: 2rem;
+        height: 2rem; // we want the logo to vertically align with the text
         margin-right: 1rem;
     }
 
@@ -390,7 +402,7 @@
         @media #{$medium-up} {
             padding: 3rem 0rem;
         }
-        border-top: 1px solid $light-gray;
+        border-top: 0.2rem solid $off-white;
         .iphone-5-vertical {
             // @extend .medium-6;
             // @extend .columns;
@@ -438,9 +450,9 @@ footer.footer {
     @include grid-row();
     // background: black;
     // color: white;
-    border-top: 0.2rem solid $main-color;
+    // border-top: 0.2rem solid $main-color;
     padding: 2rem 4rem 4rem;
-    margin-top: 6rem;
+    // margin-top: 6rem;
     .contact.button {
         width: 100%;
         padding: 2rem 0;
@@ -449,4 +461,188 @@ footer.footer {
         // color: black;
         // background: white;
     }
+}
+
+
+
+
+
+
+@mixin device(
+    $image,
+    $scale,
+    $orig-width,
+    $orig-height,
+    $orig-x-offset-content,
+    $orig-y-offset-content,
+    $orig-screen-width)
+    {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: relative;
+
+    @media #{$medium-up} {
+        $width:         $scale * $orig-width;
+        $height:        $scale * $orig-height;
+        $left:          $scale * $orig-x-offset-content;
+        $top:           $scale * $orig-y-offset-content;
+        $screen-width:  $scale * $orig-screen-width;
+        background-image: $image;
+        width: $width/2;
+        height: $height/2;
+        img {
+            width: $screen-width/2;
+            top: $top/2;
+            left: $left/2;
+            display: block;
+            position: absolute;
+        }
+    }
+}
+
+@mixin iphone(
+    $image,
+    $scale,
+    $orig-width, $orig-height,
+    $orig-x-offset-content, $orig-y-offset-content)
+    {
+
+    @include device(
+        $image,
+        $scale,
+        $orig-width, $orig-height,
+        $orig-x-offset-content, $orig-y-offset-content,
+        640px);
+    
+    @media #{$small-only} {
+        $size: 20px;
+        $vertical-bezel-size: 40px;
+
+        border: 8px solid $off-white;
+        border-top-width: $vertical-bezel-size;
+        border-bottom-width: $vertical-bezel-size;
+        border-radius: 12px;
+        z-index: 100;
+
+        &:before {
+            $width: 40px;
+            z-index: 200;
+            content: "";
+            display: block;
+            position: absolute;
+            width: $width;
+            height: 6px;
+            margin-left: -$width/2;
+            top: -22px;
+            left: 50%;
+            border-radius: 999px;
+            border: 1px solid $light-gray;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: $size;
+            height: $size;
+            margin-left: -$size/2;
+            bottom: -10px - $size;
+            left: 50%;
+            border-radius: 999px;
+            border: 1px solid $light-gray;
+        }
+        img {
+            position: relative;
+            width: 200px;
+            outline: 1px solid $main-color;
+        }
+    }
+
+}
+
+.iphone-5s-vertical {
+    @include iphone(
+        img("iphone-5s-black-vertical"),
+        0.85,
+        763px, 1602px,
+        65px, 237px);
+}
+
+.iphone-5s-flat-vertical {
+    @include iphone(
+        img("iphone-5s-flat-black-vertical-3"),
+        0.85,
+        760px, 1600px,
+        62px, 235px);
+}
+
+
+.iphone-5-vertical {
+    @include iphone(
+        img("iphone-5-black-vertical"),
+        0.85,
+        758px, 1605px,
+        62px, 234px);
+}
+
+.ipad-horizontal {
+    @include device(
+        img("ipad-black-horizontal"),
+        0.70,
+        2503px, 1766px,
+        227px, 115px,
+        2048px);
+    @media #{$small-only} {
+        $size: 10px;
+        $vertical-bezel-size: 24px;
+
+        border: 14px solid $off-white;
+        border-left-width: $vertical-bezel-size;
+        border-right-width: $vertical-bezel-size;
+        border-radius: 8px;
+        z-index: 100;
+
+        &:before {
+            $width: 5px;
+            z-index: 200;
+            content: "";
+            display: block;
+            position: absolute;
+            width: $width;
+            height: $width;
+            margin-top: -$width/2;
+            left: -14px;
+            top: 50%;
+            border-radius: 999px;
+            border: 1px solid $secondary-color;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: $size;
+            height: $size;
+            margin-top: -$size/2;
+            right: -7px - $size;
+            top: 50%;
+            border-radius: 999px;
+            border: 1px solid $secondary-color;
+        }
+        img {
+            position: relative;
+            width: 300px;
+            outline: 1px solid $main-color;
+        }
+    }
+}
+
+.ipad-flat-horizontal {
+    @include device(
+        img("ipad-flat-black-horizontal"),
+        0.70,
+        2508px, 1692px,
+        232px, 84px,
+        2048px);
 }
