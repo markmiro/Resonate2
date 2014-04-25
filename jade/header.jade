@@ -1,4 +1,10 @@
 header.header
-    h2 Mark Miro
-      small#subhead
-        | Front-end web and app developer / designer
+    a(href='/')
+        h2.title Mark Miro
+          small#subhead
+            | Front-end web and app developer / designer
+    nav
+        ul
+            li: +link('about') About
+            li: +link('labs') Labs
+            li: +link('contact') Contact

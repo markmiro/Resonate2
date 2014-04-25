@@ -8,6 +8,47 @@
 
 // Inbox CSS here
 
+.project-menu {
+    @include grid-row();
+    // position: fixed;
+    // top: 0;
+    width: 100%;
+    background: $off-white;
+    // border-top: 0.2rem solid $off-white;
+    border-bottom: 0.2rem solid $main-color;
+    z-index: 2000;
+    .content {
+        margin: 0 auto;
+    }
+    ul {
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        position: relative;
+        list-style: none;
+        padding: 1rem;
+        // border-right: 0.2rem solid $off-white;
+        &:last-child {
+            margin-right: 0;
+            // border-right: 0;
+        }
+        a {
+            color: $main-color;
+        }
+        a.active:after {
+            content: "";
+            $size: 0.8rem;
+            @include triangle($size, $main-color, up);
+            bottom: 0;
+            // margin-bottom: -0.5rem;
+            position: absolute;
+            left: 50%;
+            margin-left: -$size/2;
+        }
+    }
+}
+
 #content {
     text-rendering: optimizeLegibility;
 
@@ -29,4 +70,8 @@
         padding: 1rem;
      }
 
+}
+
+.orbit-container .orbit-slides-container img.logo {
+    display: inline;
 }

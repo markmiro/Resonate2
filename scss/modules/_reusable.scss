@@ -1,0 +1,53 @@
+
+
+
+@function img($name) {
+    @return url(../img/#{$name}.png);
+}
+
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+.centered-block {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-width;
+}
+
+.big-thin-text {
+    font-size: 2rem;
+    font-weight: 200;
+    position: relative;
+}
+
+.toggle-block {
+    display: block;
+    @include transition(all 0.3s $ease-in-out-back);
+    // -webkit-transition: opacity 0.3s ease, max-height 0.3s ease, -webkit-transform 0.3 ease;
+    @include transform(translateZ(0) translateY(-10px));
+    // -webkit-transform: perspective(800px) translateZ(-300px) rotateX(30deg);
+    opacity: 0; 
+    height: 0;
+    // max-height: 0;
+    overflow: hidden;
+}
+
+.toggle-block.active {
+    @include transform(perspective(800px) translateZ(0) rotateY(0) translateY(0));
+    opacity: 1;
+    height: auto;
+    // max-height: 1000px;
+}
+
+.browser-screenshot {
+    display: block;
+    margin-top: -35px;
+    margin-left: -57px;
+    margin-bottom: -79px;
+}

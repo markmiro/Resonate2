@@ -1,4 +1,5 @@
 - var DEBUG = true
+- var CURRENT_PAGE
 mixin product-shot()
   section.product-shot
     if block
@@ -22,7 +23,12 @@ mixin horizontal-ipad(screenshot)
 mixin project-logo(logo)
   img.logo(src='img/'+logo)
 
-mixin page(title)
+mixin link(name)
+  a(href=name, class=CURRENT_PAGE==name?'active':'')
+    block
+
+mixin page(name, title)
+  - CURRENT_PAGE = name
   if DEBUG
     doctype html
     html(lang='en')
@@ -45,6 +51,7 @@ mixin page(title)
         include footer
         script(src='bower_components/jquery/dist/jquery.js')
         script(src='bower_components/jquery.scrollTo/jquery.scrollTo.js')
+        script(src='bower_components/foundation/js/foundation.js')
         script(src='node_modules/grunt-contrib-jade/node_modules/jade/runtime.js')
         script(src='http://localhost:35729/livereload.js')
         script(src='build/app.min.js')

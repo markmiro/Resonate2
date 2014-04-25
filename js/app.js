@@ -1,10 +1,10 @@
 $(function () {
-    // $('#content').html(JST["jade/index"]);
-    // $('#content').html(JST["jade/other"]({
-    //     title: "Hello",
-    //     body: "Lorem ipsum Eu dolor ea Duis id occaecat eu pariatur aliquip sit cillum laborum minim deserunt magna ex mollit commodo velit culpa."
+    // $('#content').html(JST['jade/index']);
+    // $('#content').html(JST['jade/other']({
+    //     title: 'Hello',
+    //     body: 'Lorem ipsum Eu dolor ea Duis id occaecat eu pariatur aliquip sit cillum laborum minim deserunt magna ex mollit commodo velit culpa.'
     // }));
-    // $('#content').html("Hello!");
+    // $('#content').html('Hello!');
 
     var $project = $('.project');
     // var collapsable = [
@@ -25,7 +25,7 @@ $(function () {
     // //     // var $item = $('project.collapsed').find(partialSelector);
     // //     // $item.css('max-height', $item.outerHeight());
     // // };
-    $project.addClass('collapsed');
+    // $project.addClass('collapsed');
     $previousTarget = null;
 
     $('.project.collapsed').click(function (e) {
@@ -66,6 +66,47 @@ $(function () {
             $target.removeData('old-position');
             $.scrollTo(oldPosition + 10).scrollTo(oldPosition, 400);
         }
+    });
+
+    $('.js-auto-width').each(function(index) {
+        $(this).css('display', 'inline-block');
+        $(this).css('width', $(this).outerWidth()+1);
+        $(this).css('display', '');
+    });
+
+
+
+    $(document).foundation({
+      orbit: {
+        animation: 'slide',
+        timer: false,
+        animation_speed: 500,
+        navigation_arrows: true,
+        bullets: false,
+        variable_height: true
+      }
+    });
+
+    $('.next-project-button').click(function() {
+        $.scrollTo('.project-menu');
+        $('.projects-container .orbit-next').click();
+        // $('.slideshow-wrapper .orbit-timer').click();
+    });
+
+    $('.previous-project-button').click(function() {
+        $.scrollTo('.project-menu');
+        $('.projects-container .orbit-prev').click();
+        // $('.slideshow-wrapper .orbit-timer').click();
+    });
+
+    $previousMenuItem = $('.project-menu a').first();
+    $(".projects").on("before-slide-change.fndtn.orbit", function(event) {
+        var slideName = $('.projects .active.slide').attr('data-orbit-slide');
+        $currentMenuItem = $('.project-menu a[data-orbit-link="'+slideName+'"]');
+        $currentMenuItem.addClass('active');
+        $previousMenuItem.removeClass('active');
+        $previousMenuItem = $currentMenuItem;
+        // console.info("before slide change");
     });
 
 });
