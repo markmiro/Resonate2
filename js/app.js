@@ -1,31 +1,7 @@
 $(function () {
-    // $('#content').html(JST['jade/index']);
-    // $('#content').html(JST['jade/other']({
-    //     title: 'Hello',
-    //     body: 'Lorem ipsum Eu dolor ea Duis id occaecat eu pariatur aliquip sit cillum laborum minim deserunt magna ex mollit commodo velit culpa.'
-    // }));
-    // $('#content').html('Hello!');
 
     var $project = $('.project');
-    // var collapsable = [
-    // '.name',
-    // '.description',
-    // '.logo',
-    // 'p',
-    // 'h2',
-    // 'h3',
-    // 'h4',
-    // 'h5',
-    // 'h6'
-    // ];
-    // // for (var i = 0; i < collapsable.length; i++) {
-    // //     var partialSelector = collapsable[i];
-    // //     var $item = $project.find(partialSelector);
-    // //     // $item.data('height', $item.outerHeight());
-    // //     // var $item = $('project.collapsed').find(partialSelector);
-    // //     // $item.css('max-height', $item.outerHeight());
-    // // };
-    // $project.addClass('collapsed');
+
     $previousTarget = null;
 
     $('.project.collapsed').click(function (e) {

@@ -17,29 +17,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // rubyHaml: {
-    //   dev: {
-    //     files: {
-    //         'index.html': 'haml/index.haml'
-    //     },
-    //     options: {
-    //         templatize: false
-    //     }
-    //   }
-    // },
-
-    // haml: {
-    //   dev: {
-    //     files: {
-    //         'templates.js': ['haml/**/*.haml']
-    //     },
-    //     options: {
-    //       target: 'js',
-    //       placement: 'global'
-    //     }
-    //   }
-    // },
-
     jade: {
       dev: {
         options: {
@@ -123,14 +100,6 @@ module.exports = function(grunt) {
         }
       },
 
-      // haml: {
-      //   files: 'haml/**/*.haml',
-      //   tasks: ['haml'],
-      //   options: {
-      //     livereload: true
-      //   }
-      // },
-
       jade: {
         files: ['index.jade', 'jade/**/*.jade'],
         tasks: ['jade'],
@@ -148,10 +117,6 @@ module.exports = function(grunt) {
         }
       }
 
-      // rubyHaml: {
-      //   files: 'haml/**/*.haml',
-      //   tasks: ['rubyHaml']
-      // }
     }
   });
 
@@ -159,9 +124,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  // grunt.loadNpmTasks('grunt-haml');
   grunt.loadNpmTasks('grunt-contrib-jade');
-  // grunt.loadNpmTasks('grunt-ruby-haml');
 
   grunt.registerTask('build', ['sass', 'jade:dev2', 'jade:dev3', 'concat']);
   grunt.registerTask('default', ['build','watch']);
