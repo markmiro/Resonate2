@@ -8,20 +8,50 @@ include _mixins
         .hero-content
           h1 3 out of 4 resumes are ignored.
           p Sign up to beat the odds.
-          input.name-field(type='text' placeholder='Your name')
-          input.email-field(type='email' placeholder='Your email')
-          button.submit-button Submit
+          form.email-form
+            input.name-field(type='text' placeholder='Your name')
+            input.email-field(type='email' placeholder='Your email')
+            button.submit-button Submit
         img.paperclip(src='../img/paperclip.png')
     .body
       .content
+        .intro.hide
+          p Preamble shows you the resumes and stats of people who are applying to the same job as you. All we ask is that you provide yours in exchange. Don’t worry, we’ll black out any personal information. See everyone's stats will arm you with the information you need to create a winning resume.
+
+          h3 You're applying for jobs and they aren't calling you back...
+
+          h3 What do you do?
+          ul
+            li You have no idea who you're running up against.
+            li You don't know what everybody else's resumes look like.
+            li Everyone has their opinions about why you're not getting the job you want, but without seeing the actual pool of applicants and their resumes you have no idea.
+          h5 Wouldn't it be awesome if you could see the other applicant's resumes?
+          p You will find out the exact skills, awards, etc you need to acquire and not waste time doing things that don't matter
+
+          h5 If you do accept a job then there's no way for you to know what the competition was like.
+          p If you knew the competition then you could use that information in salary negotiations. Companies always make it sound like lots of people are applying, but in reality there might only be a few candidates.
+          p If your boss turns out to be an asshole, you'll know if you can easily get a much better job somewhere else.
+          p When others who also applied for your position get jobs elsewhere, you'll see how much they're getting paid.
+          p You'll get to see their resume and you will know if you should ask for a raise, or if you got a good deal.
+
+
+          h3 How we make it happen.
+          p When you upload your resume we strip out all personally identifiable information
+          p As others apply, we'll send you an email telling you what degrees, ages, where they're applying from, when they applied, and awards and recognition they've recieved.
+          p If you get the job and you verify your salary with us
+          ul
+            li See how many applied
+            li You'll get notified when other applicants get jobs elsewhere and what salaries they got
+            li You'll also be able to see their actual resumes
+
         .intro
           p Preamble reveals relevant statistics about people who applied to the same job -- information that tells you where you rank among applicants, in terms of experience level and other meaningful criteria.
           p Our systems break down each applicant’s resume, ignoring private information, of course, and aggregate the important factors that may lead you to reconsider your resume approach to the job posting.
           h2 How it works.
 
-          h3 See where you rank
+          h3 See where you rank.
           p Compare your resume with other applicants. How does your experience level fit in with your competition? Understand your pitfalls as well as where your resume shines. Our powerful computer models give you the necessary feedback to make your resume a success.
-          h3 Got hired? Negotiate your salary
+          h3 Got hired? Negotiate your salary.
           p We’ll pay you to make your resume visible to the rest of the applicant pool who didn’t get hired. Don’t worry, we blur any personally identifiable information. 
           p If you make the final cut, we prefer you list your salary. We then immediately list the salaries of all candidates who were turned down for the same position, but hired elsewhere. This way you’re informed of any discrepancies and have leverage to negotiate a mightier salary.
           h3 Didn’t get the job?
@@ -30,4 +60,7 @@ include _mixins
       .content
         | Contact us at: 
         a(href='mailto:preamblecompany@gmail.com') preamblecompany@gmail.com
-        p &copy; 2014 Preamble. All rights reserved.
+        p
+          | &copy;
+          = new Date().getFullYear()
+          | &nbsp; Preamble. All rights reserved.

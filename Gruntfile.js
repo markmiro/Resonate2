@@ -18,18 +18,6 @@ module.exports = function(grunt) {
     },
 
     jade: {
-      dev: {
-        options: {
-          data: {
-            debug: true
-          },
-          client: true,
-          pretty: true
-        },
-        files: {
-          'templates.js': ['jade/*.jade']
-        }
-      },
       dev2: {
         options: {
           data: {
@@ -80,8 +68,6 @@ module.exports = function(grunt) {
         files: {
           'build/app.min.js':
             [
-            'bower_components/fittext/fittext.js',
-            'templates.js',
             'js/app.js'
             ]
         }

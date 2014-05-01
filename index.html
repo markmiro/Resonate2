@@ -18,21 +18,49 @@
             <div class="hero-content">
               <h1>3 out of 4 resumes are ignored.</h1>
               <p>Sign up to beat the odds.</p>
-              <input type="text" placeholder="Your name" class="name-field">
-              <input type="email" placeholder="Your email" class="email-field">
-              <button class="submit-button">Submit</button>
+              <form class="email-form">
+                <input type="text" placeholder="Your name" class="name-field">
+                <input type="email" placeholder="Your email" class="email-field">
+                <button class="submit-button">Submit</button>
+              </form>
             </div><img src="../img/paperclip.png" class="paperclip">
           </div>
         </div>
         <div class="body">
           <div class="content">
+            <div class="intro hide">
+              <p>Preamble shows you the resumes and stats of people who are applying to the same job as you. All we ask is that you provide yours in exchange. Don’t worry, we’ll black out any personal information. See everyone's stats will arm you with the information you need to create a winning resume.</p>
+              <h3>You're applying for jobs and they aren't calling you back...</h3>
+              <h3>What do you do?</h3>
+              <ul>
+                <li>You have no idea who you're running up against.</li>
+                <li>You don't know what everybody else's resumes look like.</li>
+                <li>Everyone has their opinions about why you're not getting the job you want, but without seeing the actual pool of applicants and their resumes you have no idea.</li>
+              </ul>
+              <h5>Wouldn't it be awesome if you could see the other applicant's resumes?</h5>
+              <p>You will find out the exact skills, awards, etc you need to acquire and not waste time doing things that don't matter</p>
+              <h5>If you do accept a job then there's no way for you to know what the competition was like.</h5>
+              <p>If you knew the competition then you could use that information in salary negotiations. Companies always make it sound like lots of people are applying, but in reality there might only be a few candidates.</p>
+              <p>If your boss turns out to be an asshole, you'll know if you can easily get a much better job somewhere else.</p>
+              <p>When others who also applied for your position get jobs elsewhere, you'll see how much they're getting paid.</p>
+              <p>You'll get to see their resume and you will know if you should ask for a raise, or if you got a good deal.</p>
+              <h3>How we make it happen.</h3>
+              <p>When you upload your resume we strip out all personally identifiable information</p>
+              <p>As others apply, we'll send you an email telling you what degrees, ages, where they're applying from, when they applied, and awards and recognition they've recieved.</p>
+              <p>If you get the job and you verify your salary with us</p>
+              <ul>
+                <li>See how many applied</li>
+                <li>You'll get notified when other applicants get jobs elsewhere and what salaries they got</li>
+                <li>You'll also be able to see their actual resumes</li>
+              </ul>
+            </div>
             <div class="intro">
               <p>Preamble reveals relevant statistics about people who applied to the same job -- information that tells you where you rank among applicants, in terms of experience level and other meaningful criteria.</p>
               <p>Our systems break down each applicant’s resume, ignoring private information, of course, and aggregate the important factors that may lead you to reconsider your resume approach to the job posting.</p>
               <h2>How it works.</h2>
-              <h3>See where you rank</h3>
+              <h3>See where you rank.</h3>
               <p>Compare your resume with other applicants. How does your experience level fit in with your competition? Understand your pitfalls as well as where your resume shines. Our powerful computer models give you the necessary feedback to make your resume a success.</p>
-              <h3>Got hired? Negotiate your salary</h3>
+              <h3>Got hired? Negotiate your salary.</h3>
               <p>We’ll pay you to make your resume visible to the rest of the applicant pool who didn’t get hired. Don’t worry, we blur any personally identifiable information. </p>
               <p>If you make the final cut, we prefer you list your salary. We then immediately list the salaries of all candidates who were turned down for the same position, but hired elsewhere. This way you’re informed of any discrepancies and have leverage to negotiate a mightier salary.</p>
               <h3>Didn’t get the job?</h3>
@@ -42,7 +70,8 @@
         </div>
         <div class="footer">
           <div class="content">Contact us at: <a href="mailto:preamblecompany@gmail.com">preamblecompany@gmail.com</a>
-            <p>&copy; 2014 Preamble. All rights reserved.</p>
+            <p>&copy;2014&nbsp; Preamble. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
@@ -52,5 +81,6 @@
     <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="node_modules/grunt-contrib-jade/node_modules/jade/runtime.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
+    <script src="build/app.min.js"></script>
   </body>
 </html>
