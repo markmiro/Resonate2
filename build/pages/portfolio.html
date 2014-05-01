@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Mark Miro</title>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400">
+    <link rel="stylesheet" href="build/app.css">
+    <!--if lt IE 9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <header class="header"><a href="/">
+        <h2 class="title">Mark Miro<small id="subhead">Front-end web and app developer / designer</small></h2></a>
+      <nav>
+        <ul>
+          <li><a href="portfolio" class="active">Projects</a>
+          </li>
+          <li><a href="labs">Labs</a>
+          </li>
+          <li><a href="about">About</a>
+          </li>
+          <li><a href="contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="content">
+      <div class="project">
+        <h1>
+          <div class="name">ITS Website (Built at UC Davis)</div><small>Porting an old static website<br>to an advanced CMS-driven one</small>
+        </h1>
+        <div class="description">
+          <p>The old website was in need of attention. The entire website was hand-coded in PHP. We wanted to reorganize and update the content from the old website, create a new website with a better look, and have a system that is easy for non-programmers to maintain. I took the technical lead and the project was a big success.</p>
+        </div>
+        <section class="product-shot">
+          <h3>Before</h3>
+          <p>The screenshot shown is a different website that uses the same template that the old ITS website used.</p><img src="img/its-website-old.png" class="browser-screenshot"><br><br><br>
+          <h3>After</h3><img src="img/its-website-new.png" class="browser-screenshot">
+        </section>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy;2014&nbsp; Mark Miro
+      </p>
+    </footer>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <script src="node_modules/grunt-contrib-jade/node_modules/jade/runtime.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="build/app.min.js"></script>
+  </body>
+</html>
