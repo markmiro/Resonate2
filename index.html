@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Miro</title>
+    <title>Resonate</title>
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400">
     <link rel="stylesheet" href="build/app.css">
     <!--if lt IE 9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
@@ -11,61 +11,46 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <header class="header"><a href="/">
-        <h2 class="title">Mark Miro<small id="subhead">Front-end web and app developer / designer</small></h2></a>
-      <nav>
-        <ul>
-          <li><a href="portfolio">Projects</a>
-          </li>
-          <li><a href="labs">Labs</a>
-          </li>
-          <li><a href="about">About</a>
-          </li>
-          <li><a href="contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
     <div id="content">
-      <div class="hero">
-        <h1>Afraid you won't find a developer<br>who can also design?</h1>
-        <div class="button">Learn more</div>
-      </div>
-      <div class="project-menu">
-        <div class="content js-auto-width">
-          <ul class="js-equal-width">
-            <li><a data-orbit-link="teal-slide" class="active">Teal</a></li>
-            <li><a data-orbit-link="rhapsody-slide">Rhapsody Voice</a></li>
-            <li><a data-orbit-link="preamble-slide">Preamble</a></li>
-            <li><a data-orbit-link="its-slide">ITS</a></li>
-          </ul>
+      <div id="resonate">
+        <div class="header">
+          <div class="content"><img src="../img/resonate-logo-full.png" class="logo">
+            <div class="hero-content">
+              <h1>3 out of 4 resumes are ignored.</h1>
+              <p>Sign up to beat the odds.</p>
+              <input type="text" placeholder="Your name" class="name-field">
+              <input type="email" placeholder="Your email" class="email-field">
+              <button class="submit-button">Submit</button>
+            </div><img src="../img/paperclip.png" class="paperclip">
+          </div>
+        </div>
+        <div class="body">
+          <div class="content">
+            <div class="intro">
+              <p>Preamble reveals relevant statistics about people who applied to the same job -- information that tells you where you rank among applicants, in terms of experience level and other meaningful criteria.</p>
+              <p>Our systems break down each applicant’s resume, ignoring private information, of course, and aggregate the important factors that may lead you to reconsider your resume approach to the job posting.</p>
+              <h2>How it works.</h2>
+              <h3>See where you rank</h3>
+              <p>Compare your resume with other applicants. How does your experience level fit in with your competition? Understand your pitfalls as well as where your resume shines. Our powerful computer models give you the necessary feedback to make your resume a success.</p>
+              <h3>Got hired? Negotiate your salary</h3>
+              <p>We’ll pay you to make your resume visible to the rest of the applicant pool who didn’t get hired. Don’t worry, we blur any personally identifiable information. </p>
+              <p>If you make the final cut, we prefer you list your salary. We then immediately list the salaries of all candidates who were turned down for the same position, but hired elsewhere. This way you’re informed of any discrepancies and have leverage to negotiate a mightier salary.</p>
+              <h3>Didn’t get the job?</h3>
+              <p>Not all’s lost. We’ll let you view information about the people who ended up getting hired, so you know exactly what your resume could have missed and how to improve your prospects for similar jobs next time you apply.  </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="content">Contact us at: <a href="mailto:preamblecompany@gmail.com">preamblecompany@gmail.com</a>
+            <p>&copy; 2014 Preamble. All rights reserved.</p>
+          </div>
         </div>
       </div>
-      <div class="project-item hide">
-        <div class="content">
-          <h1><img src="img/teal-logo.png" class="logo">
-            <div class="name">Teal (Built at Ask Ziggy)</div><small>A hotel booking app that pushes iOS to it's limit</small>
-          </h1>
-        </div>
-      </div>
-      <div class="projects-container">
-        <div data-orbit class="projects">
-          <div data-orbit-slide="teal-slide" class="slide"></div>
-          <div data-orbit-slide="rhapsody-slide" class="slide"></div>
-          <div data-orbit-slide="preamble-slide" class="slide"></div>
-          <div data-orbit-slide="its-slide" class="slide"></div>
-        </div>
-      </div><a class="previous-project-button">‹</a><a class="next-project-button">›</a><a href="mailto:contact@markmiro.com" class="button sticky-contact">Contact Me</a>
     </div>
-    <footer class="footer">
-      <p>&copy;2014&nbsp; Mark Miro
-      </p>
-    </footer>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery.scrollTo/jquery.scrollTo.js"></script>
     <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="node_modules/grunt-contrib-jade/node_modules/jade/runtime.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
-    <script src="build/app.min.js"></script>
   </body>
 </html>

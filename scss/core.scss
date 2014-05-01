@@ -39,8 +39,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: $secondary-color;
     font-weight: 700;
-    color: $main-color;
     small {
         display: block;
         line-height: 1.25;
@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
+    color: $main-color;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;

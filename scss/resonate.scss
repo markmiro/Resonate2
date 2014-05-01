@@ -1,17 +1,38 @@
 #resonate {
+    .header, .body {
+        padding: 0 1rem;
+        @media #{$medium-only} {
+            padding: 0 3rem;
+        }
+    }
 
     .logo {
         height: 3rem;
         margin-top: 2rem;
     }
 
+
     .paperclip {
-        $height: 50rem;
+        @media #{$large-up} {
+            $height: 50rem;
+            height: $height;
+            // right: 4rem;
+            margin-left: 25rem;
+            margin-top: -(881/1914) * $height + 2rem;
+        }
+        @media #{$medium-only} {
+            right: 2rem;
+            $height: 20rem;
+            height: $height;
+            margin-top: -(881/1914) * $height + 2rem;
+        }
         position: absolute;
-        height: $height;
-        margin-top: -(881/1914) * $height + 2rem;
-        right: 8rem;
         z-index: 200;
+    }
+    @media #{$small-only} {
+        .paperclip {
+            display: none;
+        }
     }
 
     .header {
@@ -32,8 +53,10 @@
         h1 {
             color: white;
             margin-top: 16rem;
+            @media #{$small-only} { margin-top: 2rem; }
+            @media #{$medium-only} { margin-top: 8rem; }
             font-weight: 700;
-            max-width: 30rem;
+            max-width: 25rem;
         }
     }
 
@@ -42,12 +65,28 @@
     }
 
     .body {
-        height: 600rem;
         .content {
             padding-top: 4rem;
             @include grid-row();
             .intro {
                 max-width: $content-width - 80px;
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 4rem;
+        background: $secondary-color;
+        padding: 2rem;
+        .content {
+            @include grid-row();
+            color: white;
+            h4 {
+                color: white;
+            }
+            a {
+                color: white !important;
+                text-decoration: underline;
             }
         }
     }

@@ -1,40 +1,33 @@
 include _mixins
 
-.hero
-  h1.
-    Afraid you won't find a developer<br>who can also design?
-  .button Learn more
++resonate()
+  #resonate
+    .header
+      .content
+        img.logo(src='../img/resonate-logo-full.png')
+        .hero-content
+          h1 3 out of 4 resumes are ignored.
+          p Sign up to beat the odds.
+          input.name-field(type='text' placeholder='Your name')
+          input.email-field(type='email' placeholder='Your email')
+          button.submit-button Submit
+        img.paperclip(src='../img/paperclip.png')
+    .body
+      .content
+        .intro
+          p Preamble reveals relevant statistics about people who applied to the same job -- information that tells you where you rank among applicants, in terms of experience level and other meaningful criteria.
+          p Our systems break down each applicant’s resume, ignoring private information, of course, and aggregate the important factors that may lead you to reconsider your resume approach to the job posting.
+          h2 How it works.
 
-.project-menu
-  .content.js-auto-width
-    ul.js-equal-width
-      li
-        a.active(data-orbit-link='teal-slide') Teal
-      li
-        a(data-orbit-link='rhapsody-slide') Rhapsody Voice
-      li
-        a(data-orbit-link='preamble-slide') Preamble
-      li
-        a(data-orbit-link='its-slide') ITS
-
-.project-item.hide
-  .content
-    h1
-      +project-logo('teal-logo.png')
-      .name Teal (Built at Ask Ziggy)
-      small A hotel booking app that pushes iOS to it's limit
-
-.projects-container
-  .projects(data-orbit)
-    .slide(data-orbit-slide='teal-slide')
-    .slide(data-orbit-slide='rhapsody-slide')
-    .slide(data-orbit-slide='preamble-slide')
-    .slide(data-orbit-slide='its-slide')
-
-
-a.previous-project-button ‹
-a.next-project-button ›
-
-a(href='mailto:contact@markmiro.com').button.sticky-contact Contact Me
-
-//- include foundation
+          h3 See where you rank
+          p Compare your resume with other applicants. How does your experience level fit in with your competition? Understand your pitfalls as well as where your resume shines. Our powerful computer models give you the necessary feedback to make your resume a success.
+          h3 Got hired? Negotiate your salary
+          p We’ll pay you to make your resume visible to the rest of the applicant pool who didn’t get hired. Don’t worry, we blur any personally identifiable information. 
+          p If you make the final cut, we prefer you list your salary. We then immediately list the salaries of all candidates who were turned down for the same position, but hired elsewhere. This way you’re informed of any discrepancies and have leverage to negotiate a mightier salary.
+          h3 Didn’t get the job?
+          p Not all’s lost. We’ll let you view information about the people who ended up getting hired, so you know exactly what your resume could have missed and how to improve your prospects for similar jobs next time you apply.  
+    .footer
+      .content
+        | Contact us at: 
+        a(href='mailto:preamblecompany@gmail.com') preamblecompany@gmail.com
+        p &copy; 2014 Preamble. All rights reserved.
