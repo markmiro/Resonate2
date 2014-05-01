@@ -21,8 +21,8 @@
 
 
 $black: #000;
-$main-color: #555;
-$secondary-color: #888;
+$main-color: #c4735a;
+$secondary-color: #5d6778;
 $light-gray: #bbb;
 $off-white: #eee;
 
@@ -39,7 +39,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+    font-weight: 700;
     color: $main-color;
     small {
         display: block;

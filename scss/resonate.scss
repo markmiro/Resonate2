@@ -1,0 +1,54 @@
+#resonate {
+
+    .logo {
+        height: 3rem;
+        margin-top: 2rem;
+    }
+
+    .paperclip {
+        $height: 50rem;
+        position: absolute;
+        height: $height;
+        margin-top: -(881/1914) * $height + 2rem;
+        right: 8rem;
+        z-index: 200;
+    }
+
+    .header {
+        color: white;
+        background: $main-color url(../img/bg.jpg) no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        .content {
+            @include grid-row();
+            padding-bottom: 2rem;
+        }
+
+        .hero-content {
+            z-index: 300;
+            position: relative;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 16rem;
+            font-weight: 700;
+            max-width: 30rem;
+        }
+    }
+
+    .email-field, .name-field {
+        max-width: 20rem;
+    }
+
+    .body {
+        height: 600rem;
+        .content {
+            padding-top: 4rem;
+            @include grid-row();
+            .intro {
+                max-width: $content-width - 80px;
+            }
+        }
+    }
+}
