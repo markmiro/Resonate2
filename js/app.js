@@ -4,7 +4,7 @@ $(function () {
         e.preventDefault();
         alert($(".email-form").serialize());
         $.ajax({
-                type: "POST",
+                type: "GET",
                 url: "send-mail.php",
                 data: $(".email-form").serialize(),
                 success:function(response) {
