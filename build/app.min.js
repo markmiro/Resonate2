@@ -13,6 +13,8 @@ $(function () {
        
     // });
 
+    $('.header').height(Math.max($(window).height(), $('.header').height()));
+
 
     $(".email-form").submit(function(e) {
         e.preventDefault();

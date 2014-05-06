@@ -36,9 +36,10 @@
 
     .header {
         color: white;
-        background: $main-color url(../img/bg.jpg) no-repeat;
-        background-size: 100%;
-        background-attachment: fixed;
+        background: $secondary-color url(../img/bg.jpg) no-repeat;
+        background-position: center top;
+        background-size: cover;
+        //background-attachment: fixed;
         .content {
             @include grid-row();
             padding-bottom: 2rem;
@@ -47,15 +48,26 @@
         .hero-content {
             z-index: 300;
             position: relative;
+            p {
+                max-width: 22rem;
+            }
         }
 
         h1 {
             color: white;
-            margin-top: 16rem;
-            @media #{$small-only} { margin-top: 2rem; }
+            margin-top: 12rem;
+            @media #{$small-only} {
+                font-size: 1.5rem;
+                margin-top: 2rem;
+            }
             @media #{$medium-only} { margin-top: 8rem; }
+            @media #{$medium-up} { 
+                font-size: 4rem;
+                line-height: 4rem;
+            }
             font-weight: 700;
-            max-width: 25rem;
+            max-width: 45rem;
+            margin-bottom: 1rem;
         }
     }
 
